@@ -15,7 +15,7 @@ class SocialIcon extends StatefulWidget {
 }
 
 class _SocialIconState extends State<SocialIcon> {
-  List _isHovering = [false, false, false, false];
+  List _isHovering = [false, false, false, false,false];
   @override
   Widget build(BuildContext context) {
     return InkWell(
