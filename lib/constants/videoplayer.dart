@@ -13,7 +13,7 @@ class _PlayerState extends State<Player> {
   void initState() {
     super.initState();
     _controller = VideoPlayerController.network(
-        'https://drive.google.com/file/d/1kaqHwT3tH1oRi5BSXp9f9ZzTnUnEp4Fq/view?usp=sharing')
+        'https://firebasestorage.googleapis.com/v0/b/portfolio-21b56.appspot.com/o/designing.mp4?alt=media&token=6201543d-2a15-4547-ab3d-b35c626f1643')
       ..initialize().then((_) {
         // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
         setState(() {});

@@ -11,28 +11,59 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
-  VideoPlayerController _controller =
-      VideoPlayerController.network("https://firebasestorage.googleapis.com/v0/b/portfolio-21b56.appspot.com/o/designing.mp4?alt=media&token=c105f903-78d2-4a3c-8a2b-5009007c1d4b");
+  VideoPlayerController _controller;
 
-  Widget hoverBg() {
-    return Container(
-      child: Center(
-        child: VideoPlayer(_controller),
-      ),
-    );
+  // Widget hoverBg() {
+  //   return Container(
+  //     child: Center(
+  //       child: VideoPlayer(_controller),
+  //     ),
+  //   );
+  // }
+//TODO
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = VideoPlayerController.network(
+        'https://firebasestorage.googleapis.com/v0/b/portfolio-21b56.appspot.com/o/designing.mp4?alt=media&token=6201543d-2a15-4547-ab3d-b35c626f1643')
+      ..initialize().then((_) {
+        // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
+        setState(() {});
+      });
+    _controller.setLooping(true);
+  }
+
+  int index = 0;
+
+  Widget showScreen() {
+    switch (index) {
+      case 0:
+        return Container();
+        break;
+      case 1:
+        return SizedBox.expand(
+          child: FittedBox(
+              fit: BoxFit.cover,
+              child: Container(
+                  width: _controller.value.size?.width ?? 0,
+                  height: _controller.value.size?.height ?? 0,
+                  child: VideoPlayer(_controller))),
+        );
+        break;
+      default:
+        Container();
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Color(0xff03030F),
       body: Stack(
         alignment: Alignment.topCenter,
         children: [
-          Container(
-            child: hoverBg(),
-          ),
+          showScreen(),
           Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -43,17 +74,8 @@ class _LandingPageState extends State<LandingPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    InkWell(
-                      onHover: (value) {
-                        // _controller.play();
-                      },
-                      onTap: () {
-                        _controller.play();
-                        setState(() {});
-                      },
-                      child: Container(
-                        child: myText("Harmanjit Singh", Colors.grey[200], 20),
-                      ),
+                    Container(
+                      child: myText("Harmanjit Singh", Colors.grey[200], 20),
                     ),
                     Container(
                       child: Row(
@@ -71,7 +93,32 @@ class _LandingPageState extends State<LandingPage> {
                 child: Container(
                   child: Stack(children: [
                     Center(
-                      child: headText("Harmanjit Singh", Colors.white, 40),
+                      child: InkWell(
+                          onHover: (val) {
+                            // _controller.play();
+                            setState(() {
+                              switch (val) {
+                                case true:
+                                  setState(() {
+                                    index = 1;
+                                    _controller.play();
+                                  });
+
+                                  break;
+                                case false:
+                                  {
+                                    setState(() {
+                                      _controller.pause();
+                                      index = 0;
+                                    });
+                                  }
+                                  break;
+                                default:
+                              }
+                            });
+                          },
+                          onTap: () {},
+                          child: headText("Designing.", Colors.white, 40)),
                     ),
                     Container(
                       margin: EdgeInsets.fromLTRB(30, 0, 0, 20),

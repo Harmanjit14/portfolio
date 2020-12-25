@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.amber,
         visualDensity: VisualDensity.comfortable,
       ),
-      home: Player(),
+      home: LandingPage(),
     );
   }
 }
