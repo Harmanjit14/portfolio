@@ -93,32 +93,68 @@ class _LandingPageState extends State<LandingPage> {
                 child: Container(
                   child: Stack(children: [
                     Center(
-                      child: InkWell(
-                          onHover: (val) {
-                            // _controller.play();
-                            setState(() {
-                              switch (val) {
-                                case true:
-                                  setState(() {
-                                    index = 1;
-                                    _controller.play();
-                                  });
-
-                                  break;
-                                case false:
-                                  {
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          InkWell(
+                            onHover: (val) {
+                              // _controller.play();
+                              setState(() {
+                                switch (val) {
+                                  case true:
                                     setState(() {
-                                      _controller.pause();
-                                      index = 0;
+                                      index = 1;
+                                      _controller.play();
                                     });
-                                  }
-                                  break;
-                                default:
-                              }
-                            });
-                          },
-                          onTap: () {},
-                          child: headText("Designing.", Colors.white, 40)),
+
+                                    break;
+                                  case false:
+                                    {
+                                      setState(() {
+                                        _controller.pause();
+                                        index = 0;
+                                      });
+                                    }
+                                    break;
+                                  default:
+                                }
+                              });
+                            },
+                            onTap: () {},
+                            child: headText("Designing.", Colors.white, 50),
+                          ),
+                          SizedBox(width: 15),
+                          InkWell(
+                            onHover: (val) {
+                              // _controller.play();
+                              setState(() {
+                                switch (val) {
+                                  case true:
+                                    setState(() {
+                                      index = 1;
+                                      _controller.play();
+                                    });
+
+                                    break;
+                                  case false:
+                                    {
+                                      setState(() {
+                                        _controller.pause();
+                                        index = 0;
+                                      });
+                                    }
+                                    break;
+                                  default:
+                                }
+                              });
+                            },
+                            onTap: () {},
+                            child: headText("Developer.", Colors.white, 50),
+                          ),
+                        ],
+                      ),
                     ),
                     Container(
                       margin: EdgeInsets.fromLTRB(30, 0, 0, 20),
