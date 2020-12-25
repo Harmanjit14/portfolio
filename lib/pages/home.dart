@@ -21,6 +21,7 @@ class _LandingPageState extends State<LandingPage> {
       ..initialize();
     _controller.setLooping(true);
   }
+
   @override
   void dispose() {
     super.dispose();
@@ -46,6 +47,32 @@ class _LandingPageState extends State<LandingPage> {
         break;
       default:
         return Container();
+    }
+  }
+
+  Widget botText() {
+    switch (index) {
+      case 0:
+        return SizedBox.shrink();
+        break;
+      case 1:
+        return Container(
+          padding: EdgeInsets.fromLTRB(0, 0, 30, 15),
+          alignment: Alignment.bottomRight,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                Icons.volume_up,
+                color: Colors.grey[200],
+              ),
+              SizedBox(width: 10),
+              myText("Increase the Volume", Colors.grey[200], 12),
+            ],
+          ),
+        );
+      default:
+        return SizedBox.shrink();
     }
   }
 
@@ -99,7 +126,7 @@ class _LandingPageState extends State<LandingPage> {
                                   case true:
                                     setState(() {
                                       index = 1;
-                                 
+
                                       _controller.play();
                                     });
 
@@ -107,7 +134,6 @@ class _LandingPageState extends State<LandingPage> {
                                   case false:
                                     {
                                       setState(() {
-                                      
                                         _controller.pause();
                                         index = 0;
                                       });
@@ -129,7 +155,7 @@ class _LandingPageState extends State<LandingPage> {
                                   case true:
                                     setState(() {
                                       index = 1;
-                                     
+
                                       _controller.play();
                                     });
 
@@ -137,7 +163,6 @@ class _LandingPageState extends State<LandingPage> {
                                   case false:
                                     {
                                       setState(() {
-                                     
                                         _controller.pause();
                                         index = 0;
                                       });
@@ -148,8 +173,7 @@ class _LandingPageState extends State<LandingPage> {
                               });
                             },
                             onTap: () {},
-                            child:
-                                headText("Development.", Colors.white, 50),
+                            child: headText("Development.", Colors.white, 50),
                           ),
                         ],
                       ),
@@ -174,6 +198,7 @@ class _LandingPageState extends State<LandingPage> {
               )
             ],
           ),
+          botText(),
         ],
       ),
     );
