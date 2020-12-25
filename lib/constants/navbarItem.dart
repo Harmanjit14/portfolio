@@ -1,8 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
 
-List _isHovering = [false, false, false, false];
-
 // ignore: must_be_immutable
 class NavbarItem extends StatefulWidget {
   int index;
@@ -18,6 +16,7 @@ class NavbarItem extends StatefulWidget {
 }
 
 class _NavbarItemState extends State<NavbarItem> {
+  List _isHovering = [false, false, false, false];
   @override
   Widget build(BuildContext context) {
     return Container(

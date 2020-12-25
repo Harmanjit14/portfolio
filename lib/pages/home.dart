@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:line_awesome_icons/line_awesome_icons.dart';
 import 'package:portfolio/constants/navbarItem.dart';
+import 'package:portfolio/constants/socialIcons.dart';
 import 'package:portfolio/constants/text_style.dart';
 
 class LandingPage extends StatefulWidget {
@@ -49,16 +50,9 @@ class _LandingPageState extends State<LandingPage> {
                   margin: EdgeInsets.fromLTRB(30, 0, 0, 20),
                   alignment: Alignment.bottomLeft,
                   child: Column(mainAxisSize: MainAxisSize.min, children: [
-                    IconButton(
-                      icon: Icon(LineAwesomeIcons.github),
-                      onPressed: () {},
-                      padding: EdgeInsets.all(5),
-                      color: Colors.white,
-                      splashColor: Colors.amber,
-                      // hoverColor: Colors.amber,
-                      splashRadius: 20,
-                      iconSize: 30,
-                    )
+                    SocialIcon(LineAwesomeIcons.github, 0),
+                    SocialIcon(LineAwesomeIcons.instagram, 1),
+                    SocialIcon(LineAwesomeIcons.at, 2)
                   ]),
                 )
               ]),
