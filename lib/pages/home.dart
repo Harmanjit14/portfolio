@@ -13,25 +13,18 @@ class LandingPage extends StatefulWidget {
 class _LandingPageState extends State<LandingPage> {
   VideoPlayerController _controller;
 
-  // Widget hoverBg() {
-  //   return Container(
-  //     child: Center(
-  //       child: VideoPlayer(_controller),
-  //     ),
-  //   );
-  // }
-//TODO
-
   @override
   void initState() {
     super.initState();
     _controller = VideoPlayerController.network(
         'https://firebasestorage.googleapis.com/v0/b/portfolio-21b56.appspot.com/o/designing.mp4?alt=media&token=6201543d-2a15-4547-ab3d-b35c626f1643')
-      ..initialize().then((_) {
-        // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
-        setState(() {});
-      });
+      ..initialize();
     _controller.setLooping(true);
+  }
+  @override
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
   }
 
   int index = 0;
@@ -52,7 +45,7 @@ class _LandingPageState extends State<LandingPage> {
         );
         break;
       default:
-        Container();
+        return Container();
     }
   }
 
@@ -106,6 +99,7 @@ class _LandingPageState extends State<LandingPage> {
                                   case true:
                                     setState(() {
                                       index = 1;
+                                 
                                       _controller.play();
                                     });
 
@@ -113,6 +107,7 @@ class _LandingPageState extends State<LandingPage> {
                                   case false:
                                     {
                                       setState(() {
+                                      
                                         _controller.pause();
                                         index = 0;
                                       });
@@ -134,6 +129,7 @@ class _LandingPageState extends State<LandingPage> {
                                   case true:
                                     setState(() {
                                       index = 1;
+                                     
                                       _controller.play();
                                     });
 
@@ -141,6 +137,7 @@ class _LandingPageState extends State<LandingPage> {
                                   case false:
                                     {
                                       setState(() {
+                                     
                                         _controller.pause();
                                         index = 0;
                                       });
@@ -151,7 +148,8 @@ class _LandingPageState extends State<LandingPage> {
                               });
                             },
                             onTap: () {},
-                            child: headText("Developer.", Colors.white, 50),
+                            child:
+                                headText("Development.", Colors.white, 50),
                           ),
                         ],
                       ),
