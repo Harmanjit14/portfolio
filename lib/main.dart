@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/constants/videoplayer.dart';
 import 'package:portfolio/pages/home.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.amber,
         visualDensity: VisualDensity.comfortable,
       ),
-      home: LandingPage(),
+      home: Player(),
     );
   }
 }

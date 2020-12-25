@@ -3,6 +3,7 @@ import 'package:line_awesome_icons/line_awesome_icons.dart';
 import 'package:portfolio/constants/navbarItem.dart';
 import 'package:portfolio/constants/socialIcons.dart';
 import 'package:portfolio/constants/text_style.dart';
+import 'package:video_player/video_player.dart';
 
 class LandingPage extends StatefulWidget {
   @override
@@ -10,6 +11,17 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
+  VideoPlayerController _controller =
+      VideoPlayerController.network("https://firebasestorage.googleapis.com/v0/b/portfolio-21b56.appspot.com/o/designing.mp4?alt=media&token=c105f903-78d2-4a3c-8a2b-5009007c1d4b");
+
+  Widget hoverBg() {
+    return Container(
+      child: Center(
+        child: VideoPlayer(_controller),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -18,6 +30,9 @@ class _LandingPageState extends State<LandingPage> {
       body: Stack(
         alignment: Alignment.topCenter,
         children: [
+          Container(
+            child: hoverBg(),
+          ),
           Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -28,8 +43,17 @@ class _LandingPageState extends State<LandingPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      child: myText("Harmanjit Singh", Colors.grey[200], 20),
+                    InkWell(
+                      onHover: (value) {
+                        // _controller.play();
+                      },
+                      onTap: () {
+                        _controller.play();
+                        setState(() {});
+                      },
+                      child: Container(
+                        child: myText("Harmanjit Singh", Colors.grey[200], 20),
+                      ),
                     ),
                     Container(
                       child: Row(
