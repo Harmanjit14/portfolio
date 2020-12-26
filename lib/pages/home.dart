@@ -12,6 +12,7 @@ class LandingPage extends StatefulWidget {
 
 class _LandingPageState extends State<LandingPage> {
   VideoPlayerController _controller;
+  VideoPlayerController _controller2;
 
   @override
   void initState() {
@@ -20,6 +21,10 @@ class _LandingPageState extends State<LandingPage> {
         'https://firebasestorage.googleapis.com/v0/b/portfolio-21b56.appspot.com/o/designing.mp4?alt=media&token=6201543d-2a15-4547-ab3d-b35c626f1643')
       ..initialize();
     _controller.setLooping(true);
+    _controller2 = VideoPlayerController.network(
+        'https://firebasestorage.googleapis.com/v0/b/portfolio-21b56.appspot.com/o/work.mp4?alt=media&token=8963d4ab-3169-41f9-b5b4-dba5d31237a4')
+      ..initialize();
+    _controller2.setLooping(true);
   }
 
   @override
@@ -45,6 +50,17 @@ class _LandingPageState extends State<LandingPage> {
                   child: VideoPlayer(_controller))),
         );
         break;
+      case 2:
+        return SizedBox.expand(
+          child: FittedBox(
+              fit: BoxFit.cover,
+              child: Container(
+                  width: _controller.value.size?.width ?? 0,
+                  height: _controller.value.size?.height ?? 0,
+                  child: VideoPlayer(_controller2))),
+        );
+        break;
+
       default:
         return Container();
     }
@@ -71,6 +87,24 @@ class _LandingPageState extends State<LandingPage> {
             ],
           ),
         );
+        break;
+      case 2:
+        return Container(
+          padding: EdgeInsets.fromLTRB(0, 0, 30, 15),
+          alignment: Alignment.bottomRight,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                Icons.volume_up,
+                color: Colors.grey[200],
+              ),
+              SizedBox(width: 10),
+              myText("Increase the Volume", Colors.grey[200], 12),
+            ],
+          ),
+        );
+        break;
       default:
         return SizedBox.shrink();
     }
@@ -125,16 +159,16 @@ class _LandingPageState extends State<LandingPage> {
                                 switch (val) {
                                   case true:
                                     setState(() {
-                                      index = 1;
+                                      index = 2;
 
-                                      _controller.play();
+                                      _controller2.play();
                                     });
 
                                     break;
                                   case false:
                                     {
                                       setState(() {
-                                        _controller.pause();
+                                        _controller2.pause();
                                         index = 0;
                                       });
                                     }
@@ -144,7 +178,7 @@ class _LandingPageState extends State<LandingPage> {
                               });
                             },
                             onTap: () {},
-                            child: headText("Designing.", Colors.white, 50),
+                            child: headText("Applications.", Colors.white, 50),
                           ),
                           SizedBox(width: 15),
                           InkWell(
@@ -173,7 +207,36 @@ class _LandingPageState extends State<LandingPage> {
                               });
                             },
                             onTap: () {},
-                            child: headText("Development.", Colors.white, 50),
+                            child: headText("Backend.", Colors.white, 50),
+                          ),
+                          SizedBox(width: 15),
+                          InkWell(
+                            onHover: (val) {
+                              // _controller.play();
+                              setState(() {
+                                switch (val) {
+                                  case true:
+                                    setState(() {
+                                      index = 1;
+
+                                      _controller.play();
+                                    });
+
+                                    break;
+                                  case false:
+                                    {
+                                      setState(() {
+                                        _controller.pause();
+                                        index = 0;
+                                      });
+                                    }
+                                    break;
+                                  default:
+                                }
+                              });
+                            },
+                            onTap: () {},
+                            child: headText("Designing.", Colors.white, 50),
                           ),
                         ],
                       ),
