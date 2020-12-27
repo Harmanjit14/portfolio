@@ -315,10 +315,12 @@ class _LandingPageState extends State<LandingPage> {
                 height: screensize.height,
                 width: screensize.width,
                 child: Carosel(),
+                color: Colors.yellow,
               ),
               Container(
                 height: 200,
                 width: screensize.width,
+                color: Colors.white,
                 child: Credits(),
               )
             ],

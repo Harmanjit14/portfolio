@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/constants/text_style.dart';
 
 final List<String> images = [
   'https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png',
@@ -49,32 +50,50 @@ class _CaroselState extends State<Carosel> {
     var screenSize = MediaQuery.of(context).size;
     var imageSliders = generateImageTiles(screenSize);
     return Container(
-      child: Stack(
+      margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          CarouselSlider(
-            items: imageSliders,
-            options: CarouselOptions(
-                enlargeCenterPage: true,
-                aspectRatio: 18 / 8,
-                autoPlay: true,
-                onPageChanged: (index, reason) {
-                  setState(() {
-                    _current = index;
-                  });
-                }),
-            carouselController: _controller,
-          ),
-          AspectRatio(
-            aspectRatio: 18 / 8,
-            child: Center(
-              child: Text(
-                places[_current],
-                style: GoogleFonts.electrolize(
-                  letterSpacing: 8,
-                  fontSize: screenSize.width / 25,
-                  color: Colors.white,
+          Container(
+              margin: EdgeInsets.fromLTRB(50, 50, 0, 0),
+              alignment: Alignment.topLeft,
+              child: headText("My Projects", Colors.white, 50)),
+          Container(
+            margin: EdgeInsets.fromLTRB(0, 0, 0, 50),
+            child: Stack(
+              
+              children: [
+                Container(
+                  alignment: Alignment.center,
+                  child: CarouselSlider(
+                    items: imageSliders,
+                    options: CarouselOptions(
+                        enlargeCenterPage: true,
+                        height: screenSize.height * 0.7,
+                        autoPlay: true,
+                        onPageChanged: (index, reason) {
+                          setState(() {
+                            _current = index;
+                          });
+                        }),
+                    carouselController: _controller,
+                  ),
                 ),
-              ),
+                Container(
+                  height: screenSize.height * 0.7,
+                  child: Center(
+                    child: Text(
+                      places[_current],
+                      style: GoogleFonts.electrolize(
+                        letterSpacing: 8,
+                        fontSize: screenSize.width / 25,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ],
