@@ -85,7 +85,7 @@ class _CaroselState extends State<Carosel> {
                   child: Center(
                     child: Text(
                       places[_current],
-                      style: GoogleFonts.electrolize(
+                      style: GoogleFonts.poppins(
                         letterSpacing: 8,
                         fontSize: screenSize.width / 25,
                         color: Colors.white,
