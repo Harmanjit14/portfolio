@@ -3,8 +3,13 @@ import 'package:line_awesome_icons/line_awesome_icons.dart';
 import 'package:portfolio/constants/navbarItem.dart';
 import 'package:portfolio/constants/socialIcons.dart';
 import 'package:portfolio/constants/text_style.dart';
+import 'package:portfolio/pages/carousel.dart';
+import 'package:portfolio/pages/credits.dart';
 import 'package:video_player/video_player.dart';
 import 'package:portfolio/constants/scroll.dart';
+
+// ignore: unused_element
+double scrollPosition = 0;
 
 class LandingPage extends StatefulWidget {
   @override
@@ -15,11 +20,10 @@ class _LandingPageState extends State<LandingPage> {
   VideoPlayerController _controller;
   VideoPlayerController _controller2;
   ScrollController _scrollController;
-  double _scrollPosition = 0;
 
   _scrollListener() {
     setState(() {
-      _scrollPosition = _scrollController.position.pixels;
+      scrollPosition = _scrollController.position.pixels;
     });
   }
 
@@ -80,7 +84,11 @@ class _LandingPageState extends State<LandingPage> {
   Widget botText() {
     switch (index) {
       case 0:
-        return SizedBox.shrink();
+        return Container(
+          alignment: Alignment.bottomRight,
+          padding: EdgeInsets.fromLTRB(0, 0, 30, 15),
+          child: myText("Hover headings to play!", Colors.grey[200], 12),
+        );
         break;
       case 1:
         return Container(
@@ -117,7 +125,11 @@ class _LandingPageState extends State<LandingPage> {
         );
         break;
       default:
-        return SizedBox.shrink();
+        return Container(
+          alignment: Alignment.bottomRight,
+          padding: EdgeInsets.fromLTRB(0, 0, 30, 15),
+          child: myText("Hover headings to play!", Colors.grey[200], 12),
+        );
     }
   }
 
@@ -134,7 +146,7 @@ class _LandingPageState extends State<LandingPage> {
         controller: _scrollController,
         child: SingleChildScrollView(
           controller: _scrollController,
-          physics: BouncingScrollPhysics(),
+          physics: ClampingScrollPhysics(),
           child: Column(
             children: [
               Container(
@@ -302,12 +314,12 @@ class _LandingPageState extends State<LandingPage> {
               Container(
                 height: screensize.height,
                 width: screensize.width,
-                color: Colors.brown,
+                child: Carosel(),
               ),
               Container(
-                height: 300,
+                height: 200,
                 width: screensize.width,
-                color: Colors.teal,
+                child: Credits(),
               )
             ],
           ),

@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/pages/home.dart';
 
 // ignore: must_be_immutable
 class NavbarItem extends StatefulWidget {
@@ -23,7 +24,7 @@ class _NavbarItemState extends State<NavbarItem> {
       child: InkWell(
         // hoverColor: Colors.white,
         borderRadius: BorderRadius.circular(40),
-        splashColor: Colors.amber,
+        splashColor: Colors.yellow,
         splashFactory: InkRipple.splashFactory,
         // radius: 60,
         onHover: (val) {
@@ -31,7 +32,11 @@ class _NavbarItemState extends State<NavbarItem> {
             _isHovering[widget.index] = val;
           });
         },
-        onTap: () {},
+        onTap: () {
+          setState(() {
+            print(widget.text);
+          });
+        },
         child: Padding(
           padding: EdgeInsets.all(15),
           child: Row(
@@ -39,7 +44,7 @@ class _NavbarItemState extends State<NavbarItem> {
               Icon(
                 widget.icon,
                 color:
-                    _isHovering[widget.index] ? Colors.amber : Colors.grey[200],
+                    _isHovering[widget.index] ? Colors.yellow : Colors.grey[200],
               ),
               SizedBox(
                 width: 10,
@@ -51,7 +56,7 @@ class _NavbarItemState extends State<NavbarItem> {
                     fontSize: 16,
                     fontWeight: FontWeight.normal,
                     color: _isHovering[widget.index]
-                        ? Colors.amber
+                        ? Colors.yellow
                         : Colors.grey[200],
                     // shadows: <Shadow>[
                     //   Shadow(
