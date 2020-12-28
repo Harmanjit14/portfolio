@@ -3,6 +3,7 @@ import 'package:line_awesome_icons/line_awesome_icons.dart';
 import 'package:portfolio/constants/navbarItem.dart';
 import 'package:portfolio/constants/socialIcons.dart';
 import 'package:portfolio/constants/text_style.dart';
+import 'package:portfolio/pages/about.dart';
 import 'package:portfolio/pages/carousel.dart';
 import 'package:portfolio/pages/credits.dart';
 import 'package:video_player/video_player.dart';
@@ -314,7 +315,7 @@ class _LandingPageState extends State<LandingPage> {
               Container(
                 height: screensize.height,
                 width: screensize.width,
-                // child: Carosel(),
+                child: AboutSection(),
                 color: Colors.yellow[600],
               ),
               Container(
