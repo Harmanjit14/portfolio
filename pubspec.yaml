@@ -33,6 +33,7 @@ dependencies:
   video_player: ^1.0.1
   carousel_slider: ^2.3.1
   url_launcher: ^5.7.10
+  rflutter_alert: ^1.1.0
 
 
 dev_dependencies:

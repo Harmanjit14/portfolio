@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 List _isHovering = [false, false, false, false];
 
@@ -15,7 +16,28 @@ class SocialIcon extends StatefulWidget {
 }
 
 class _SocialIconState extends State<SocialIcon> {
-  List _isHovering = [false, false, false, false,false];
+  List _isHovering = [false, false, false, false, false];
+
+  void ontap(int index) async {
+    switch (index) {
+      case 0:
+        await launch("https://github.com/Harmanjit14");
+        break;
+      case 1:
+        await launch("https://www.instagram.com/harmanjit_14/");
+        break;
+      case 2:
+        await launch("harmanjit140500@gmail.com");
+        break;
+      case 3:
+        break;
+      case 4:
+        break;
+      case 5:
+        break;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -28,14 +50,15 @@ class _SocialIconState extends State<SocialIcon> {
           _isHovering[widget.index] = val;
         });
       },
-      onTap: () {},
+      onTap: () {
+        ontap(widget.index);
+      },
       child: Padding(
         padding: EdgeInsets.all(1),
         child: Icon(
           widget.icon,
           size: 40,
-          color:
-              _isHovering[widget.index] ? Colors.yellow : Colors.grey[200],
+          color: _isHovering[widget.index] ? Colors.yellow : Colors.grey[200],
         ),
       ),
     );
