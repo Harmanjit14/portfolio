@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 List _isHovering = [false, false, false, false];
@@ -27,7 +28,22 @@ class _SocialIconState extends State<SocialIcon> {
         await launch("https://www.instagram.com/harmanjit_14/");
         break;
       case 2:
-        await launch("harmanjit140500@gmail.com");
+        Alert(
+          context: context,
+          type: AlertType.info,
+          title: "Mail me here",
+          desc: "harmanjit140500@gmail.com",
+          buttons: [
+            DialogButton(
+              child: Text(
+                "COOL",
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+              onPressed: () => Navigator.pop(context),
+              width: 120,
+            )
+          ],
+        ).show();
         break;
       case 3:
         break;
