@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/constants/text_style.dart';
 
 class AboutSection extends StatefulWidget {
   @override
@@ -12,10 +13,17 @@ class _AboutSectionState extends State<AboutSection> {
     return Container(
       height: screenSize.height,
       width: screenSize.width,
-      child: Column(
+      child: Row(
         children: [
-          Expanded(flex: 1, child: Container(child: Row())),
-          Expanded(flex: 1, child: Container(child: Row())),
+          Container(
+              margin: EdgeInsets.fromLTRB(50, 0, 20, 0),
+              child: headText("About Me", Colors.black, 50)),
+          Expanded(
+              child: SingleChildScrollView(
+            child: Column(
+              children: [],
+            ),
+          ))
         ],
       ),
     );

@@ -20,6 +20,7 @@ class LandingPage extends StatefulWidget {
 class _LandingPageState extends State<LandingPage> {
   VideoPlayerController _controller;
   VideoPlayerController _controller2;
+  VideoPlayerController _controller3;
   ScrollController _scrollController;
 
   _scrollListener() {
@@ -36,6 +37,10 @@ class _LandingPageState extends State<LandingPage> {
       ..initialize();
     _controller.setLooping(true);
     _controller2 = VideoPlayerController.network(
+        'https://firebasestorage.googleapis.com/v0/b/portfolio-21b56.appspot.com/o/work.mp4?alt=media&token=8963d4ab-3169-41f9-b5b4-dba5d31237a4')
+      ..initialize();
+    _controller3.setLooping(true);
+    _controller3 = VideoPlayerController.network(
         'https://firebasestorage.googleapis.com/v0/b/portfolio-21b56.appspot.com/o/work.mp4?alt=media&token=8963d4ab-3169-41f9-b5b4-dba5d31237a4')
       ..initialize();
     _controller2.setLooping(true);
@@ -74,6 +79,16 @@ class _LandingPageState extends State<LandingPage> {
                   width: _controller.value.size.width,
                   height: _controller.value.size.height,
                   child: VideoPlayer(_controller2))),
+        );
+        break;
+         case 3:
+        return SizedBox.expand(
+          child: FittedBox(
+              fit: BoxFit.cover,
+              child: Container(
+                  width: _controller.value.size.width,
+                  height: _controller.value.size.height,
+                  child: VideoPlayer(_controller3))),
         );
         break;
 
@@ -201,16 +216,16 @@ class _LandingPageState extends State<LandingPage> {
                                           switch (val) {
                                             case true:
                                               setState(() {
-                                                index = 2;
+                                                index = 3;
 
-                                                _controller2.play();
+                                                _controller3.play();
                                               });
 
                                               break;
                                             case false:
                                               {
                                                 setState(() {
-                                                  _controller2.pause();
+                                                  _controller3.pause();
                                                   index = 0;
                                                 });
                                               }
