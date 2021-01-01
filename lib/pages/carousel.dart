@@ -9,16 +9,14 @@ final List<String> images = [
   'https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png',
   'https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png',
   'https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png',
-  'https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png',
 ];
 
 final List<String> places = [
-  'ASIA',
-  'AFRICA',
-  'EUROPE',
-  'SOUTH AMERICA',
-  'AUSTRALIA',
-  'ANTARCTICA',
+  'MELODIES',
+  'THAPAR-CONFESSIONS',
+  'RAISE',
+  'ONENESS',
+  'FOOD APP UI',
 ];
 
 class Carosel extends StatefulWidget {
@@ -62,7 +60,6 @@ class _CaroselState extends State<Carosel> {
           Container(
             margin: EdgeInsets.fromLTRB(0, 0, 0, 50),
             child: Stack(
-              
               children: [
                 Container(
                   alignment: Alignment.center,
@@ -83,13 +80,30 @@ class _CaroselState extends State<Carosel> {
                 Container(
                   height: screenSize.height * 0.7,
                   child: Center(
-                    child: Text(
-                      places[_current],
-                      style: GoogleFonts.poppins(
-                        letterSpacing: 8,
-                        fontSize: screenSize.width / 25,
-                        color: Colors.white,
-                      ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          places[_current],
+                          style: GoogleFonts.poppins(
+                            letterSpacing: 8,
+                            fontSize: screenSize.width / 25,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Container(
+                          width: 200,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: FlatButton(
+                              padding: EdgeInsets.all(10),
+                              color: Colors.yellow,
+                              onPressed: () {},
+                              child: myText("More", Colors.black, 18),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
