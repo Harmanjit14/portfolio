@@ -21,6 +21,7 @@ class _LandingPageState extends State<LandingPage> {
   VideoPlayerController _controller;
   VideoPlayerController _controller2;
   VideoPlayerController _controller3;
+  VideoPlayerController _controller4;
   ScrollController _scrollController;
 
   _scrollListener() {
@@ -39,11 +40,13 @@ class _LandingPageState extends State<LandingPage> {
     _controller2 = VideoPlayerController.network(
         'https://firebasestorage.googleapis.com/v0/b/portfolio-21b56.appspot.com/o/work.mp4?alt=media&token=8963d4ab-3169-41f9-b5b4-dba5d31237a4')
       ..initialize();
-    _controller3.setLooping(true);
-    _controller3 = VideoPlayerController.network(
-        'https://firebasestorage.googleapis.com/v0/b/portfolio-21b56.appspot.com/o/work.mp4?alt=media&token=8963d4ab-3169-41f9-b5b4-dba5d31237a4')
-      ..initialize();
     _controller2.setLooping(true);
+    _controller3 = VideoPlayerController.network(
+        'https://firebasestorage.googleapis.com/v0/b/portfolio-21b56.appspot.com/o/apps.mp4?alt=media&token=cecf23f8-4ad7-4e16-aa27-8dbbb712230d')
+      ..initialize();
+    _controller3.setLooping(true);
+    _controller4 = VideoPlayerController.asset("assets/bg.mp4")..initialize();
+    _controller4.setLooping(true);
     _scrollController = ScrollController();
     _scrollController.addListener(_scrollListener);
   }
@@ -52,14 +55,25 @@ class _LandingPageState extends State<LandingPage> {
   void dispose() {
     super.dispose();
     _controller.dispose();
+    _controller3.dispose();
+    _controller2.dispose();
+    _controller4.dispose();
   }
 
   int index = 0;
 
-  Widget showScreen() {
+  Widget showScreen(Size size) {
     switch (index) {
       case 0:
-        return Container();
+        // return Container();
+        return SizedBox.expand(
+            child: FittedBox(
+                fit: BoxFit.cover,
+                child: Container(
+                  height: 1000,
+                  width: 1000,
+                  child: VideoPlayer(_controller4),
+                )));
         break;
       case 1:
         return SizedBox.expand(
@@ -76,18 +90,18 @@ class _LandingPageState extends State<LandingPage> {
           child: FittedBox(
               fit: BoxFit.cover,
               child: Container(
-                  width: _controller.value.size.width,
-                  height: _controller.value.size.height,
+                  width: _controller2.value.size.height,
+                  height: _controller2.value.size.height,
                   child: VideoPlayer(_controller2))),
         );
         break;
-         case 3:
+      case 3:
         return SizedBox.expand(
           child: FittedBox(
               fit: BoxFit.cover,
               child: Container(
-                  width: _controller.value.size.width,
-                  height: _controller.value.size.height,
+                  width: _controller3.value.size.width,
+                  height: _controller3.value.size.height,
                   child: VideoPlayer(_controller3))),
         );
         break;
@@ -151,7 +165,8 @@ class _LandingPageState extends State<LandingPage> {
 
   @override
   Widget build(BuildContext context) {
-    var screensize = MediaQuery.of(context).size;
+    _controller4.play();
+    Size screensize = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Color(0xff03030F),
       body: WebScrollbar(
@@ -171,7 +186,7 @@ class _LandingPageState extends State<LandingPage> {
                 child: Stack(
                   alignment: Alignment.topCenter,
                   children: [
-                    showScreen(),
+                    showScreen(screensize),
                     Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -246,16 +261,16 @@ class _LandingPageState extends State<LandingPage> {
                                           switch (val) {
                                             case true:
                                               setState(() {
-                                                index = 1;
+                                                index = 2;
 
-                                                _controller.play();
+                                                _controller2.play();
                                               });
 
                                               break;
                                             case false:
                                               {
                                                 setState(() {
-                                                  _controller.pause();
+                                                  _controller2.pause();
                                                   index = 0;
                                                 });
                                               }
