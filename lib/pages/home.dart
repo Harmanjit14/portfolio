@@ -300,7 +300,9 @@ class _LandingPageState extends State<LandingPage> {
                                       SizedBox(height: 15),
                                       SocialIcon(LineAwesomeIcons.linkedin, 3),
                                       SizedBox(height: 15),
-                                      SocialIcon(LineAwesomeIcons.archive, 4)
+                                      SocialIcon(LineAwesomeIcons.archive, 4),
+                                      SizedBox(height: 15),
+                                      SocialIcon(LineAwesomeIcons.code, 5),
                                     ]),
                               )
                             ]),
