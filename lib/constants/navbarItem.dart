@@ -44,7 +44,7 @@ class _NavbarItemState extends State<NavbarItem> {
               Icon(
                 widget.icon,
                 color:
-                    _isHovering[widget.index] ? Colors.yellow : Colors.grey[200],
+                    _isHovering[widget.index] ? Colors.lightBlue : Colors.grey[200],
               ),
               SizedBox(
                 width: 10,
@@ -56,7 +56,7 @@ class _NavbarItemState extends State<NavbarItem> {
                     fontSize: 16,
                     fontWeight: FontWeight.normal,
                     color: _isHovering[widget.index]
-                        ? Colors.yellow
+                        ? Colors.lightBlue
                         : Colors.grey[200],
                     // shadows: <Shadow>[
                     //   Shadow(
