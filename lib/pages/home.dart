@@ -202,7 +202,7 @@ class _LandingPageState extends State<LandingPage> {
         controller: _scrollController,
         child: SingleChildScrollView(
           controller: _scrollController,
-          physics: BouncingScrollPhysics(),
+          physics: ClampingScrollPhysics(),
           child: Column(
             children: [
               Container(
