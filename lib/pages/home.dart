@@ -60,20 +60,20 @@ class _LandingPageState extends State<LandingPage> {
     _controller4.dispose();
   }
 
-  int index = 0;
+  int _indexFinal = 0;
 
   Widget showScreen(Size size) {
-    switch (index) {
+    switch (_indexFinal) {
       case 0:
-        // return Container();
-        return SizedBox.expand(
-            child: FittedBox(
-                fit: BoxFit.cover,
-                child: Container(
-                  height: 1000,
-                  width: 1000,
-                  child: VideoPlayer(_controller4),
-                )));
+        return Container();
+        // return SizedBox.expand(
+        //     child: FittedBox(
+        //         fit: BoxFit.cover,
+        //         child: Container(
+        //           height: 1000,
+        //           width: 1000,
+        //           child: VideoPlayer(_controller4),
+        //         )));
         break;
       case 1:
         return SizedBox.expand(
@@ -108,11 +108,19 @@ class _LandingPageState extends State<LandingPage> {
 
       default:
         return Container();
+      // return SizedBox.expand(
+      //     child: FittedBox(
+      //         fit: BoxFit.cover,
+      //         child: Container(
+      //           height: 1000,
+      //           width: 1000,
+      //           child: VideoPlayer(_controller4),
+      //         )));
     }
   }
 
   Widget botText() {
-    switch (index) {
+    switch (_indexFinal) {
       case 0:
         return Container(
           alignment: Alignment.bottomRight,
@@ -154,6 +162,23 @@ class _LandingPageState extends State<LandingPage> {
           ),
         );
         break;
+      case 3:
+        return Container(
+          padding: EdgeInsets.fromLTRB(0, 0, 30, 15),
+          alignment: Alignment.bottomRight,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                Icons.volume_up,
+                color: Colors.grey[200],
+              ),
+              SizedBox(width: 10),
+              myText("Increase the Volume", Colors.grey[200], 12),
+            ],
+          ),
+        );
+        break;
       default:
         return Container(
           alignment: Alignment.bottomRight,
@@ -165,7 +190,7 @@ class _LandingPageState extends State<LandingPage> {
 
   @override
   Widget build(BuildContext context) {
-    _controller4.play();
+    // _controller4.play();
     Size screensize = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Color(0xff03030F),
@@ -177,7 +202,7 @@ class _LandingPageState extends State<LandingPage> {
         controller: _scrollController,
         child: SingleChildScrollView(
           controller: _scrollController,
-          physics: ClampingScrollPhysics(),
+          physics: BouncingScrollPhysics(),
           child: Column(
             children: [
               Container(
@@ -231,7 +256,7 @@ class _LandingPageState extends State<LandingPage> {
                                           switch (val) {
                                             case true:
                                               setState(() {
-                                                index = 3;
+                                                _indexFinal = 3;
 
                                                 _controller3.play();
                                               });
@@ -241,7 +266,7 @@ class _LandingPageState extends State<LandingPage> {
                                               {
                                                 setState(() {
                                                   _controller3.pause();
-                                                  index = 0;
+                                                  _indexFinal = 0;
                                                 });
                                               }
                                               break;
@@ -261,7 +286,7 @@ class _LandingPageState extends State<LandingPage> {
                                           switch (val) {
                                             case true:
                                               setState(() {
-                                                index = 2;
+                                                _indexFinal = 2;
 
                                                 _controller2.play();
                                               });
@@ -271,7 +296,7 @@ class _LandingPageState extends State<LandingPage> {
                                               {
                                                 setState(() {
                                                   _controller2.pause();
-                                                  index = 0;
+                                                  _indexFinal = 0;
                                                 });
                                               }
                                               break;
@@ -291,7 +316,7 @@ class _LandingPageState extends State<LandingPage> {
                                           switch (val) {
                                             case true:
                                               setState(() {
-                                                index = 1;
+                                                _indexFinal = 1;
 
                                                 _controller.play();
                                               });
@@ -301,7 +326,7 @@ class _LandingPageState extends State<LandingPage> {
                                               {
                                                 setState(() {
                                                   _controller.pause();
-                                                  index = 0;
+                                                  _indexFinal = 0;
                                                 });
                                               }
                                               break;
