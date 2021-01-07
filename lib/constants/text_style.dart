@@ -15,9 +15,9 @@ Text headText(String text, Color color, double size) {
       fontWeight: FontWeight.bold,
       shadows: <Shadow>[
         Shadow(
-          blurRadius: 5,
+          blurRadius: 3,
           offset: Offset(1.5, 1),
-          color: Colors.black,
+          color:  Color(0xff242B2E),
         )
       ],
     ),

@@ -65,7 +65,9 @@ class _LandingPageState extends State<LandingPage> {
   Widget showScreen(Size size) {
     switch (_indexFinal) {
       case 0:
-        return Container();
+        return SizedBox.expand(
+          child: Image.asset("assets/black.jpg", fit: BoxFit.cover),
+        );
         // return SizedBox.expand(
         //     child: FittedBox(
         //         fit: BoxFit.cover,
@@ -107,7 +109,9 @@ class _LandingPageState extends State<LandingPage> {
         break;
 
       default:
-        return Container();
+        return SizedBox.expand(
+          child: Image.asset("assets/black.jpg", fit: BoxFit.cover),
+        );
       // return SizedBox.expand(
       //     child: FittedBox(
       //         fit: BoxFit.cover,
@@ -193,7 +197,7 @@ class _LandingPageState extends State<LandingPage> {
     // _controller4.play();
     Size screensize = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color(0xff03030F),
+      backgroundColor: Color(0xff03030F), //Color(0xff242B2E),
       body: WebScrollbar(
         color: Colors.yellow,
         backgroundColor: Colors.transparent,
@@ -373,7 +377,7 @@ class _LandingPageState extends State<LandingPage> {
                 height: screensize.height,
                 width: screensize.width,
                 child: AboutSection(),
-                color: Colors.yellow[600],
+                color: Color(0xffCAD5E2),
               ),
               Container(
                 height: screensize.height,

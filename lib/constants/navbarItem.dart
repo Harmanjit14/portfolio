@@ -20,11 +20,12 @@ class _NavbarItemState extends State<NavbarItem> {
   List _isHovering = [false, false, false, false];
   @override
   Widget build(BuildContext context) {
+    Color hoverColor = Color(0xff12B0E8);
     return Container(
       child: InkWell(
         // hoverColor: Colors.white,
         borderRadius: BorderRadius.circular(40),
-        splashColor: Colors.yellow,
+        splashColor: hoverColor,
         splashFactory: InkRipple.splashFactory,
         // radius: 60,
         onHover: (val) {
@@ -44,7 +45,7 @@ class _NavbarItemState extends State<NavbarItem> {
               Icon(
                 widget.icon,
                 color:
-                    _isHovering[widget.index] ? Colors.yellow : Colors.grey[200],
+                    _isHovering[widget.index] ? hoverColor : Colors.grey[200],
               ),
               SizedBox(
                 width: 10,
@@ -56,7 +57,7 @@ class _NavbarItemState extends State<NavbarItem> {
                     fontSize: 16,
                     fontWeight: FontWeight.normal,
                     color: _isHovering[widget.index]
-                        ? Colors.yellow
+                        ? hoverColor
                         : Colors.grey[200],
                     // shadows: <Shadow>[
                     //   Shadow(

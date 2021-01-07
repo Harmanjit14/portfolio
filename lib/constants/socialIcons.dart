@@ -59,9 +59,10 @@ class _SocialIconState extends State<SocialIcon> {
 
   @override
   Widget build(BuildContext context) {
+    Color hoverColor = Color(0xffE03B8B);
     return InkWell(
       borderRadius: BorderRadius.circular(80),
-      splashColor: Colors.pink,
+      splashColor: hoverColor,
       splashFactory: InkRipple.splashFactory,
       // radius: 60,
       onHover: (val) {
@@ -77,7 +78,7 @@ class _SocialIconState extends State<SocialIcon> {
         child: Icon(
           widget.icon,
           size: 40,
-          color: _isHovering[widget.index] ? Colors.blue : Colors.grey[200],
+          color: _isHovering[widget.index] ? hoverColor : Colors.grey[200],
         ),
       ),
     );
