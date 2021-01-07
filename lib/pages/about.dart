@@ -14,20 +14,25 @@ class _AboutSectionState extends State<AboutSection> {
       height: screenSize.height,
       width: screenSize.width,
       child: Stack(
-        alignment: Alignment.bottomCenter,
+        alignment: Alignment.center,
         children: [
           SizedBox.expand(
-            child: Image.asset("assets/white.jpg"),
+            child: Image.asset(
+              "assets/white.jpg",
+              fit: BoxFit.cover,
+            ),
           ),
           Row(
             children: [
               Container(
                   margin: EdgeInsets.fromLTRB(50, 0, 20, 0),
-                  child: headText("About Me",Colors.black, 50)),
+                  child: headText("About Me", Colors.black, 50)),
               Expanded(
                   child: SingleChildScrollView(
                 child: Column(
-                  children: [],
+                  children: [
+                    Text(""),
+                  ],
                 ),
               ))
             ],

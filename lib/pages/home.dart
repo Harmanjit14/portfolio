@@ -65,24 +65,14 @@ class _LandingPageState extends State<LandingPage> {
   Widget showScreen(Size size) {
     switch (_indexFinal) {
       case 0:
-        return SizedBox.expand(
-          child: Image.asset("assets/black.jpg", fit: BoxFit.cover),
-        );
-        // return SizedBox.expand(
-        //     child: FittedBox(
-        //         fit: BoxFit.cover,
-        //         child: Container(
-        //           height: 1000,
-        //           width: 1000,
-        //           child: VideoPlayer(_controller4),
-        //         )));
+        return Container();
         break;
       case 1:
         return SizedBox.expand(
           child: FittedBox(
               fit: BoxFit.cover,
               child: Container(
-                  width: _controller.value.size.width,
+                  width: _controller.value.size.height,
                   height: _controller.value.size.height,
                   child: VideoPlayer(_controller))),
         );
@@ -102,24 +92,14 @@ class _LandingPageState extends State<LandingPage> {
           child: FittedBox(
               fit: BoxFit.cover,
               child: Container(
-                  width: _controller3.value.size.width,
+                  width: _controller3.value.size.height,
                   height: _controller3.value.size.height,
                   child: VideoPlayer(_controller3))),
         );
         break;
 
       default:
-        return SizedBox.expand(
-          child: Image.asset("assets/black.jpg", fit: BoxFit.cover),
-        );
-      // return SizedBox.expand(
-      //     child: FittedBox(
-      //         fit: BoxFit.cover,
-      //         child: Container(
-      //           height: 1000,
-      //           width: 1000,
-      //           child: VideoPlayer(_controller4),
-      //         )));
+        return Container();
     }
   }
 
