@@ -3,8 +3,7 @@ description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-
+# publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
 # followed by an optional build number separated by a +.
@@ -34,6 +33,7 @@ dependencies:
   carousel_slider: ^2.3.1
   url_launcher: ^5.7.10
   rflutter_alert: ^1.1.0
+  lottie: ^0.7.0+1
 
 
 dev_dependencies:
@@ -57,6 +57,7 @@ flutter:
   assets:
     # - assets/black.jpg
     - assets/white.jpg
+    - assets/code.gif
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

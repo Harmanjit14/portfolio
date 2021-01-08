@@ -68,31 +68,40 @@ class _LandingPageState extends State<LandingPage> {
         return Container();
         break;
       case 1:
-        return SizedBox.expand(
+        return Container(
+          height: size.height,
+          width: size.width,
           child: FittedBox(
-              fit: BoxFit.cover,
+              fit: BoxFit.fill,
               child: Container(
-                  width: _controller.value.size.height,
+                  // color: Colors.pink,
+                  width: _controller.value.size.width,
                   height: _controller.value.size.height,
                   child: VideoPlayer(_controller))),
         );
         break;
       case 2:
-        return SizedBox.expand(
+        return Container(
+          height: size.height,
+          width: size.width,
           child: FittedBox(
-              fit: BoxFit.cover,
+              fit: BoxFit.fill,
               child: Container(
-                  width: _controller2.value.size.height,
+                  // color: Colors.pink,
+                  width: _controller2.value.size.width,
                   height: _controller2.value.size.height,
                   child: VideoPlayer(_controller2))),
         );
         break;
       case 3:
-        return SizedBox.expand(
+        return Container(
+          height: size.height,
+          width: size.width,
           child: FittedBox(
-              fit: BoxFit.cover,
+              fit: BoxFit.fill,
               child: Container(
-                  width: _controller3.value.size.height,
+                  // color: Colors.pink,
+                  width: _controller3.value.size.width,
                   height: _controller3.value.size.height,
                   child: VideoPlayer(_controller3))),
         );
