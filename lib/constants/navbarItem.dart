@@ -20,7 +20,7 @@ class _NavbarItemState extends State<NavbarItem> {
   List _isHovering = [false, false, false, false];
   @override
   Widget build(BuildContext context) {
-    Color hoverColor = Color(0xff12B0E8);
+    Color hoverColor = Colors.yellow;
     return Container(
       child: InkWell(
         // hoverColor: Colors.white,

@@ -58,7 +58,12 @@ flutter:
     - assets/black.jpg
     - assets/white.jpg
     - assets/code.gif
-    - assets/skills
+    - assets/skills/firebase.jpg
+    - assets/skills/flutter.jpg
+    - assets/skills/django.png
+    - assets/skills/java.jpeg
+    - assets/skills/photoshop.png
+    - assets/skills/filmora.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

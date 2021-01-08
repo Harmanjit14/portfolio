@@ -41,7 +41,7 @@ class _SkillCarState extends State<SkillCar> {
             width: 120,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
-              child: Image.network(
+              child: Image.asset(
                 images[i],
                 fit: BoxFit.cover,
               ),

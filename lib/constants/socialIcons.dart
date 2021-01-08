@@ -59,7 +59,7 @@ class _SocialIconState extends State<SocialIcon> {
 
   @override
   Widget build(BuildContext context) {
-    Color hoverColor = Color(0xffE03B8B);
+    Color hoverColor = Colors.yellow[400];
     return InkWell(
       borderRadius: BorderRadius.circular(80),
       splashColor: hoverColor,
