@@ -208,7 +208,10 @@ class _AboutSectionState extends State<AboutSection> {
                       ),
                     ],
                   ),
-                )
+                ),
+                Expanded(
+                  child: (hoverabout) ? aboutMe() : mySkills(),
+                ),
               ],
             ),
           ),
