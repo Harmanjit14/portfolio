@@ -6,6 +6,7 @@ import 'package:portfolio/constants/text_style.dart';
 import 'package:portfolio/pages/about.dart';
 import 'package:portfolio/pages/carousel.dart';
 import 'package:portfolio/pages/credits.dart';
+import 'package:portfolio/pages/skills.dart';
 import 'package:video_player/video_player.dart';
 import 'package:portfolio/constants/scroll.dart';
 
@@ -367,6 +368,11 @@ class _LandingPageState extends State<LandingPage> {
                 width: screensize.width,
                 child: AboutSection(),
                 color: Color(0xffCAD5E2),
+              ),
+              Container(
+                height: screensize.height,
+                width: screensize.width,
+                child: SkillPage(),
               ),
               Container(
                 height: screensize.height,
