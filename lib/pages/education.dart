@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:line_awesome_icons/line_awesome_icons.dart';
+// import 'package:line_awesome_icons/line_awesome_icons.dart';
 import 'package:portfolio/constants/text_style.dart';
 
 class EducationPage extends StatelessWidget {

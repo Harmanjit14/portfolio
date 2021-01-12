@@ -38,16 +38,26 @@ class _SkillPageState extends State<SkillPage> {
                 color: Colors.white.withOpacity(0.2),
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: GridView.count(
-                crossAxisCount: 3,
-                crossAxisSpacing: 5,
+              child: Column(
                 children: [
-                  card(85, 1),
-                  card(90, 0),
-                  card(65, 2),
-                  card(75, 3),
-                  card(90, 4),
-                  card(60, 5)
+                  Container(
+                      alignment: Alignment.centerLeft,
+                      child: headText("My Skills", headColor, 50)),
+                  SizedBox(height: 30),
+                  Expanded(
+                    child: GridView.count(
+                      crossAxisCount: 3,
+                      crossAxisSpacing: 5,
+                      children: [
+                        card(85, 1),
+                        card(90, 0),
+                        card(65, 2),
+                        card(75, 3),
+                        card(90, 4),
+                        card(60, 5)
+                      ],
+                    ),
+                  ),
                 ],
               )),
         ),
