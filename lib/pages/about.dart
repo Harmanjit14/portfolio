@@ -31,7 +31,7 @@ class _AboutSectionState extends State<AboutSection> {
             sigmaY: 7,
           ),
           child: Container(
-            padding: EdgeInsets.all(20),
+            padding: EdgeInsets.all(25),
             decoration: BoxDecoration(
               color: Colors.white.withOpacity(0.2),
               borderRadius: BorderRadius.circular(20),
@@ -164,6 +164,7 @@ class _AboutSectionState extends State<AboutSection> {
                     ],
                   ),
                 ),
+                SizedBox(width: 20),
                 Expanded(
                   child: (hoverabout) ? aboutMe() : EducationPage(),
                 ),
