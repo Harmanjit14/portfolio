@@ -2,13 +2,21 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/constants/text_style.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 final List<String> images = [
-  'https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png',
-  'https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png',
-  'https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png',
-  'https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png',
-  'https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png',
+  'https://ma-hub.imgix.net/wp-images/2019/05/04185051/royalty-free-music-Background.jpg',
+  'https://miro.medium.com/max/4430/1*A0xqqOV7LXlLEK1Acu8BFw.jpeg',
+  'https://www.datocms-assets.com/17507/1606822997-empowerment.jpg',
+  'https://st2.depositphotos.com/3971023/6400/v/950/depositphotos_64004381-stock-illustration-cheerful-people-holding-hands-seamless.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg',
+];
+final List<String> url = [
+  'https://github.com/Harmanjit14/melodies-frontend',
+  'https://github.com/Harmanjit14/ThaparConfessionsApp-Firebase',
+  'https://github.com/Harmanjit14/RAISE-Hack4She2020',
+  'https://github.com/Harmanjit14/OneNess',
+  'https://github.com/Harmanjit14/Food-Delivery-App-UI',
 ];
 
 final List<String> places = [
@@ -88,7 +96,7 @@ class _CaroselState extends State<Carosel> {
                           style: GoogleFonts.poppins(
                             letterSpacing: 8,
                             fontSize: screenSize.width / 25,
-                            color: Colors.white,
+                            color: Colors.yellow[700],
                           ),
                         ),
                         Container(
@@ -98,7 +106,9 @@ class _CaroselState extends State<Carosel> {
                             child: FlatButton(
                               padding: EdgeInsets.all(10),
                               color: Colors.yellow,
-                              onPressed: () {},
+                              onPressed: () async {
+                                await launch(url[_current]);
+                              },
                               child: myText("More", Colors.black, 18),
                             ),
                           ),

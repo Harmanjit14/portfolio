@@ -7,14 +7,16 @@ class NavbarItem extends StatefulWidget {
   String text;
   var icon;
   double jump;
+  int duration;
   ScrollController _controller;
-  NavbarItem(
-      int index, String text, var icon, ScrollController obj, double jump) {
+  NavbarItem(int index, String text, var icon, ScrollController obj,
+      double jump, int duration) {
     this.index = index;
     this.text = text;
     this.icon = icon;
     this._controller = obj;
     this.jump = jump;
+    this.duration = duration;
   }
   @override
   _NavbarItemState createState() => _NavbarItemState();
@@ -41,7 +43,8 @@ class _NavbarItemState extends State<NavbarItem> {
           setState(() {
             print(widget.text);
             widget._controller.animateTo(widget.jump,
-                duration: Duration(milliseconds: 500), curve: Curves.decelerate);
+                duration: Duration(milliseconds: widget.duration),
+                curve: Curves.ease);
           });
         },
         child: Padding(
