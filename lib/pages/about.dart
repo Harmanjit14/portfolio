@@ -44,7 +44,7 @@ class _AboutSectionState extends State<AboutSection> {
                     margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
                     child: headText("About Me", headColor, 50)),
                 myText(
-                    "Hi There! , My name is Harmanjit Singh. I am Full Stack-Developer cum UI/UX Designer. I am currently pursueing BTech in COE at Thapar Institute of Engineering and Technology, Patiala. I currently live in Punjab, India, happy to work from anywhere. My hobbies are swimming, gaming, traveling, badmintion, coding. I am always up to learn something new and create something better for the society",
+                    "Hi There! , My name is Harmanjit Singh. I am Full Stack-Developer and a UI/UX Designer. I am currently pursueing BTech in COE at Thapar Institute of Engineering and Technology, Patiala. I currently live in Punjab, India, happy to work from anywhere. My hobbies are swimming, gaming, traveling, badmintion, coding. I am always up to learn something new and create something better for the society",
                     Colors.white,
                     22,
                     weight: FontWeight.w400),

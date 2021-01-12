@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants/singleCard.dart';
 import 'package:portfolio/constants/text_style.dart';
+import 'package:portfolio/pages/workPage.dart';
 
 class SkillPage extends StatefulWidget {
   @override
@@ -88,7 +89,7 @@ class _SkillPageState extends State<SkillPage> {
                 children: [
                   (hoverSkill)
                       ? Expanded(child: skillsGrid())
-                      : Expanded(child: skillsGrid()),
+                      : Expanded(child: WorkPage()),
                   SizedBox(width: 60),
                   Container(
                     margin: EdgeInsets.fromLTRB(0, 150, 0, 0),
