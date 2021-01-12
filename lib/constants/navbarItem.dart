@@ -1,16 +1,20 @@
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
-// import 'package:portfolio/pages/home.dart';
 
 // ignore: must_be_immutable
 class NavbarItem extends StatefulWidget {
   int index;
   String text;
   var icon;
-  NavbarItem(int index, String text, var icon) {
+  double jump;
+  ScrollController _controller;
+  NavbarItem(
+      int index, String text, var icon, ScrollController obj, double jump) {
     this.index = index;
     this.text = text;
     this.icon = icon;
+    this._controller = obj;
+    this.jump = jump;
   }
   @override
   _NavbarItemState createState() => _NavbarItemState();
@@ -36,6 +40,8 @@ class _NavbarItemState extends State<NavbarItem> {
         onTap: () {
           setState(() {
             print(widget.text);
+            widget._controller.animateTo(widget.jump,
+                duration: Duration(milliseconds: 500), curve: Curves.decelerate);
           });
         },
         child: Padding(

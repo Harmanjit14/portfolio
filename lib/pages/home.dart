@@ -12,6 +12,7 @@ import 'package:portfolio/constants/scroll.dart';
 
 // ignore: unused_element
 double scrollPosition = 0;
+ScrollController _scrollController;
 
 class LandingPage extends StatefulWidget {
   @override
@@ -22,8 +23,7 @@ class _LandingPageState extends State<LandingPage> {
   VideoPlayerController _controller;
   VideoPlayerController _controller2;
   VideoPlayerController _controller3;
-  VideoPlayerController _controller4;
-  ScrollController _scrollController;
+  // ScrollController _scrollController;
 
   _scrollListener() {
     setState(() {
@@ -46,8 +46,6 @@ class _LandingPageState extends State<LandingPage> {
         'https://firebasestorage.googleapis.com/v0/b/portfolio-21b56.appspot.com/o/apps.mp4?alt=media&token=cecf23f8-4ad7-4e16-aa27-8dbbb712230d')
       ..initialize();
     _controller3.setLooping(true);
-    _controller4 = VideoPlayerController.asset("assets/bg.mp4")..initialize();
-    _controller4.setLooping(true);
     _scrollController = ScrollController();
     _scrollController.addListener(_scrollListener);
   }
@@ -58,7 +56,6 @@ class _LandingPageState extends State<LandingPage> {
     _controller.dispose();
     _controller3.dispose();
     _controller2.dispose();
-    _controller4.dispose();
   }
 
   int _indexFinal = 0;
@@ -223,11 +220,24 @@ class _LandingPageState extends State<LandingPage> {
                               Container(
                                 child: Row(
                                   children: [
-                                    NavbarItem(0, "Projects", Icons.work),
                                     NavbarItem(
-                                        1, "Achievements", Icons.emoji_events),
+                                        0,
+                                        "Projects",
+                                        Icons.work,
+                                        _scrollController,
+                                        screensize.height * 3),
                                     NavbarItem(
-                                        2, "About Me!", Icons.emoji_emotions),
+                                        1,
+                                        "Skills",
+                                        Icons.emoji_objects,
+                                        _scrollController,
+                                        screensize.height * 2),
+                                    NavbarItem(
+                                        2,
+                                        "About Me!",
+                                        Icons.emoji_emotions,
+                                        _scrollController,
+                                        screensize.height),
                                   ],
                                 ),
                               ),

@@ -36,7 +36,7 @@ class _SocialIconState extends State<SocialIcon> {
           buttons: [
             DialogButton(
               child: Text(
-                "COOL",
+                "Sure!",
                 style: TextStyle(color: Colors.white, fontSize: 20),
               ),
               onPressed: () => Navigator.pop(context),
