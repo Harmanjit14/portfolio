@@ -381,9 +381,9 @@ class _LandingPageState extends State<LandingPage> {
                 // color: Colors.yellow,
               ),
               Container(
-                height: 200,
+                height: 100,
                 width: screensize.width,
-                color: Colors.white,
+                color: Color(0xffE8BD0D),
                 child: Credits(),
               )
             ],
