@@ -3,23 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:portfolio/constants/text_style.dart';
 
-final List<String> images = [
-  'assets/skills/firebase.jpg',
-  'assets/skills/flutter.jpg',
-  'assets/skills/django.png',
-  'assets/skills/java.jpeg',
-  'assets/skills/photoshop.png',
-  'assets/skills/filmora.png',
-];
 
-final List<String> places = [
-  'FIREBASE',
-  'FLUTTER',
-  'DJANGO',
-  'JAVA',
-  'PHOTOSHOP',
-  'FILMORA',
-];
 
 class SkillCar extends StatefulWidget {
   @override

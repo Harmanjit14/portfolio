@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:portfolio/constants/singleCard.dart';
 import 'package:portfolio/constants/text_style.dart';
 
 class SkillPage extends StatefulWidget {
@@ -14,10 +15,42 @@ class _SkillPageState extends State<SkillPage> {
 
   Widget skillsGrid() {
     return Container(
-      child: GridView.count(
-        crossAxisCount: 3,
-        crossAxisSpacing: 20,
-        children: [],
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            blurRadius: 16,
+            spreadRadius: 10,
+            color: Colors.black.withOpacity(0.2),
+          ),
+        ],
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(
+            sigmaX: 7,
+            sigmaY: 7,
+          ),
+          child: Container(
+              padding: EdgeInsets.all(25),
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.2),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: GridView.count(
+                crossAxisCount: 3,
+                crossAxisSpacing: 5,
+                children: [
+                  card(85, 1),
+                  card(90, 0),
+                  card(65, 2),
+                  card(75, 3),
+                  card(90, 4),
+                  card(60, 5)
+                ],
+              )),
+        ),
       ),
     );
   }
@@ -39,17 +72,21 @@ class _SkillPageState extends State<SkillPage> {
           ),
           SizedBox.expand(
             child: Container(
-              margin: EdgeInsets.fromLTRB(50, 20, 50, 20),
+              margin: EdgeInsets.fromLTRB(50, 50, 50, 50),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
+                  (hoverSkill)
+                      ? Expanded(child: skillsGrid())
+                      : Expanded(child: skillsGrid()),
+                  SizedBox(width: 60),
                   Container(
                     margin: EdgeInsets.fromLTRB(0, 150, 0, 0),
                     height: screenSize.height,
                     width: 250,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.end,
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         InkWell(
@@ -63,7 +100,6 @@ class _SkillPageState extends State<SkillPage> {
                             padding: EdgeInsets.all(5),
                             child: Row(
                               children: [
-                                (hoverSkill) ? skillsGrid() : skillsGrid(),
                                 headText(
                                     "Skills",
                                     (hoverSkill) ? headColor : Colors.white,
