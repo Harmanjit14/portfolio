@@ -127,6 +127,7 @@ class _AboutSectionState extends State<AboutSection> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
+                  margin: EdgeInsets.fromLTRB(0, 150, 0, 0),
                   height: screenSize.height,
                   width: 250,
                   child: Column(
@@ -162,10 +163,8 @@ class _AboutSectionState extends State<AboutSection> {
                                     ]),
                               ),
                               SizedBox(width: 15),
-                              headText(
-                                  "About",
-                                  (hoverabout) ? headColor : Colors.white,
-                                  (hoverabout) ? 30 : 25),
+                              headText("About",
+                                  (hoverabout) ? headColor : Colors.white, 25),
                             ],
                           ),
                         ),
@@ -198,10 +197,8 @@ class _AboutSectionState extends State<AboutSection> {
                                     ]),
                               ),
                               SizedBox(width: 15),
-                              headText(
-                                  "Education",
-                                  (hoveredu) ? headColor : Colors.white,
-                                  (hoveredu) ? 30 : 25),
+                              headText("Education",
+                                  (hoveredu) ? headColor : Colors.white, 25),
                             ],
                           ),
                         ),
