@@ -555,9 +555,9 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               SocialIcon(LineAwesomeIcons.linkedin, 3),
-                              SizedBox(height: 15),
+                              SizedBox(width: 15),
                               SocialIcon(LineAwesomeIcons.archive, 4),
-                              SizedBox(height: 15),
+                              SizedBox(width: 15),
                               SocialIcon(LineAwesomeIcons.code, 5),
                             ],
                           ),
