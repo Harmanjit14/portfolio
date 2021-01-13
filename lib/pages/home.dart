@@ -7,7 +7,7 @@ import 'package:portfolio/pages/about.dart';
 import 'package:portfolio/pages/carousel.dart';
 import 'package:portfolio/pages/credits.dart';
 import 'package:portfolio/pages/skills.dart';
-import 'package:video_player/video_player.dart';
+// import 'package:video_player/video_player.dart';
 import 'package:portfolio/constants/scroll.dart';
 
 // ignore: unused_element
@@ -18,9 +18,9 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
-  VideoPlayerController _controller;
-  VideoPlayerController _controller2;
-  VideoPlayerController _controller3;
+  // VideoPlayerController _controller;
+  // VideoPlayerController _controller2;
+  // VideoPlayerController _controller3;
   // ScrollController _scrollController;
   double scrollPosition = 0;
   ScrollController _scrollController;
@@ -31,21 +31,28 @@ class _LandingPageState extends State<LandingPage> {
     });
   }
 
+  String app =
+      "https://firebasestorage.googleapis.com/v0/b/gurleen-kaur.appspot.com/o/jefferson-santos-9SoCnyQmkzI-unsplash.jpg?alt=media&token=434da213-eeed-4d05-9bb7-3e16ff44a050";
+  String des =
+      "https://firebasestorage.googleapis.com/v0/b/gurleen-kaur.appspot.com/o/pexels-burst-374054.jpg?alt=media&token=2a9d5356-accb-4363-853c-63b695749429";
+  String back =
+      "https://firebasestorage.googleapis.com/v0/b/gurleen-kaur.appspot.com/o/pexels-daria-shevtsova-1440722.jpg?alt=media&token=4c63e979-cc52-470a-b215-19467e9d0cd0";
+
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.network(
-        'https://firebasestorage.googleapis.com/v0/b/portfolio-21b56.appspot.com/o/designing.mp4?alt=media&token=6201543d-2a15-4547-ab3d-b35c626f1643')
-      ..initialize();
-    _controller.setLooping(true);
-    _controller2 = VideoPlayerController.network(
-        'https://firebasestorage.googleapis.com/v0/b/portfolio-21b56.appspot.com/o/work.mp4?alt=media&token=8963d4ab-3169-41f9-b5b4-dba5d31237a4')
-      ..initialize();
-    _controller2.setLooping(true);
-    _controller3 = VideoPlayerController.network(
-        'https://firebasestorage.googleapis.com/v0/b/portfolio-21b56.appspot.com/o/apps.mp4?alt=media&token=cecf23f8-4ad7-4e16-aa27-8dbbb712230d')
-      ..initialize();
-    _controller3.setLooping(true);
+    // _controller = VideoPlayerController.network(
+    //     'https://firebasestorage.googleapis.com/v0/b/portfolio-21b56.appspot.com/o/designing.mp4?alt=media&token=6201543d-2a15-4547-ab3d-b35c626f1643')
+    //   ..initialize();
+    // _controller.setLooping(true);
+    // _controller2 = VideoPlayerController.network(
+    //     'https://firebasestorage.googleapis.com/v0/b/portfolio-21b56.appspot.com/o/work.mp4?alt=media&token=8963d4ab-3169-41f9-b5b4-dba5d31237a4')
+    //   ..initialize();
+    // _controller2.setLooping(true);
+    // _controller3 = VideoPlayerController.network(
+    //     'https://firebasestorage.googleapis.com/v0/b/portfolio-21b56.appspot.com/o/apps.mp4?alt=media&token=cecf23f8-4ad7-4e16-aa27-8dbbb712230d')
+    //   ..initialize();
+    // _controller3.setLooping(true);
     _scrollController = ScrollController();
     _scrollController.addListener(_scrollListener);
   }
@@ -53,9 +60,10 @@ class _LandingPageState extends State<LandingPage> {
   @override
   void dispose() {
     super.dispose();
-    _controller.dispose();
-    _controller3.dispose();
-    _controller2.dispose();
+    // _controller.dispose();
+    // _controller3.dispose();
+    // _controller2.dispose();
+    _scrollController.dispose();
   }
 
   int _indexFinal = 0;
@@ -67,42 +75,30 @@ class _LandingPageState extends State<LandingPage> {
         break;
       case 1:
         return Container(
-          height: size.height,
-          width: size.width,
-          child: FittedBox(
-              fit: BoxFit.fill,
-              child: Container(
-                  // color: Colors.pink,
-                  width: _controller.value.size.width,
-                  height: _controller.value.size.height,
-                  child: VideoPlayer(_controller))),
-        );
+            height: size.height,
+            width: size.width,
+            child: Image.network(
+              "https://images.pexels.com/photos/374054/pexels-photo-374054.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+              fit: BoxFit.cover,
+            ));
         break;
       case 2:
         return Container(
-          height: size.height,
-          width: size.width,
-          child: FittedBox(
-              fit: BoxFit.fill,
-              child: Container(
-                  // color: Colors.pink,
-                  width: _controller2.value.size.width,
-                  height: _controller2.value.size.height,
-                  child: VideoPlayer(_controller2))),
-        );
+            height: size.height,
+            width: size.width,
+            // height: size.height, width: size.width, color: Colors.pink);
+            child: Image.network(
+                "https://images.pexels.com/photos/4974920/pexels-photo-4974920.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                fit: BoxFit.cover));
+        // child: Image.network(back, fit: BoxFit.cover));
         break;
       case 3:
         return Container(
-          height: size.height,
-          width: size.width,
-          child: FittedBox(
-              fit: BoxFit.fill,
-              child: Container(
-                  // color: Colors.pink,
-                  width: _controller3.value.size.width,
-                  height: _controller3.value.size.height,
-                  child: VideoPlayer(_controller3))),
-        );
+            height: size.height,
+            width: size.width,
+            child: Image.network(
+                "https://images.pexels.com/photos/7114/laptop-mobile.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                fit: BoxFit.cover));
         break;
 
       default:
@@ -116,7 +112,8 @@ class _LandingPageState extends State<LandingPage> {
         return Container(
           alignment: Alignment.bottomRight,
           padding: EdgeInsets.fromLTRB(0, 0, 30, 15),
-          child: myText("Hover headings to play!", Colors.grey[200], 12),
+          child: myText(
+              "Video Playback will be Added Soon!", Colors.grey[200], 12),
         );
         break;
       case 1:
@@ -174,7 +171,8 @@ class _LandingPageState extends State<LandingPage> {
         return Container(
           alignment: Alignment.bottomRight,
           padding: EdgeInsets.fromLTRB(0, 0, 30, 15),
-          child: myText("Hover headings to play!", Colors.grey[200], 12),
+          child: myText(
+              "Video Playback will be Added Soon!", Colors.grey[200], 12),
         );
     }
   }
@@ -225,7 +223,7 @@ class _LandingPageState extends State<LandingPage> {
                                         "Projects",
                                         Icons.work,
                                         _scrollController,
-                                        screensize.height * 3,
+                                        (screensize.height * 3) + 100,
                                         1200),
                                     NavbarItem(
                                         1,
@@ -264,15 +262,12 @@ class _LandingPageState extends State<LandingPage> {
                                             case true:
                                               setState(() {
                                                 _indexFinal = 3;
-
-                                                _controller3.play();
                                               });
 
                                               break;
                                             case false:
                                               {
                                                 setState(() {
-                                                  _controller3.pause();
                                                   _indexFinal = 0;
                                                 });
                                               }
@@ -294,15 +289,12 @@ class _LandingPageState extends State<LandingPage> {
                                             case true:
                                               setState(() {
                                                 _indexFinal = 2;
-
-                                                _controller2.play();
                                               });
 
                                               break;
                                             case false:
                                               {
                                                 setState(() {
-                                                  _controller2.pause();
                                                   _indexFinal = 0;
                                                 });
                                               }
@@ -324,15 +316,12 @@ class _LandingPageState extends State<LandingPage> {
                                             case true:
                                               setState(() {
                                                 _indexFinal = 1;
-
-                                                _controller.play();
                                               });
 
                                               break;
                                             case false:
                                               {
                                                 setState(() {
-                                                  _controller.pause();
                                                   _indexFinal = 0;
                                                 });
                                               }
@@ -414,11 +403,65 @@ class LandingPageMobile extends StatefulWidget {
 
 class _LandingPageMobileState extends State<LandingPageMobile> {
   ScrollController _scrollController;
+  double scrollPosition = 0;
+  _scrollListener() {
+    setState(() {
+      scrollPosition = _scrollController.position.pixels;
+    });
+  }
+
+  @override
+  void initState() {
+    _scrollController = ScrollController();
+    _scrollController.addListener(_scrollListener);
+    super.initState();
+  }
+
   final Color headColor = Color(0xffE8BD0D);
   @override
   void dispose() {
     _scrollController.dispose();
     super.dispose();
+  }
+
+  int _indexFinal = 0;
+
+  Widget showScreen(Size size) {
+    switch (_indexFinal) {
+      case 0:
+        return Container();
+        break;
+      case 1:
+        return Container(
+            height: size.height,
+            width: size.width,
+            child: Image.network(
+              "https://images.pexels.com/photos/374054/pexels-photo-374054.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+              fit: BoxFit.cover,
+            ));
+        break;
+      case 2:
+        return Container(
+            height: size.height,
+            width: size.width,
+            // height: size.height, width: size.width, color: Colors.pink);
+            child: Image.network(
+                "https://images.pexels.com/photos/4974920/pexels-photo-4974920.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                fit: BoxFit.cover));
+        // child: Image.network(back, fit: BoxFit.cover));
+        break;
+      case 3:
+        return Container(
+            height: size.height,
+            width: size.width,
+            child: Image.network(
+                "https://images.pexels.com/photos/7114/laptop-mobile.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                fit: BoxFit.cover));
+        break;
+
+      default:
+        return Container();
+    }
   }
 
   @override
@@ -432,7 +475,10 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
       drawer: Drawer(
         child: Column(
           children: [
-            DrawerHeader(child: Container()),
+            DrawerHeader(
+                child: Container(
+              child: Center(child: headText("Harmanjit Singh", headColor, 25)),
+            )),
             NavbarItem(0, "Projects", Icons.work, _scrollController,
                 screensize.height * 3, 1200),
             Divider(
@@ -455,7 +501,44 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
             Container(
               width: screensize.width,
               height: screensize.height,
-              color: Colors.green,
+              child: Stack(
+                children: [
+                  Container(child: showScreen(screensize)),
+                  Container(
+                    width: screensize.width,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                    InkWell(
+                        onTap: () {
+                          setState(() {
+                            _indexFinal = 1;
+                          });
+                        },
+                        child: headText("Application .", Colors.white, 30)),
+                    SizedBox(height: 10),
+                    InkWell(
+                        onTap: () {
+                          setState(() {
+                            _indexFinal = 2;
+                          });
+                        },
+                        child: headText("Backend .", Colors.white, 30)),
+                    SizedBox(height: 10),
+                    InkWell(
+                        onTap: () {
+                          setState(() {
+                            _indexFinal = 3;
+                          });
+                        },
+                        child: headText("Design .", Colors.white, 30)),
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
             Container(
               width: screensize.width,
