@@ -11,12 +11,27 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Harmanjit',
+      title: 'welcome back',
       theme: ThemeData(
         primarySwatch: Colors.amber,
         visualDensity: VisualDensity.comfortable,
+        brightness: Brightness.dark
       ),
-      home: LandingPage(),
+      home: ResponsiveWidget(),
+    );
+  }
+}
+
+class ResponsiveWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (constraints.maxWidth > 1200) {
+          return LandingPage();
+        } else
+          return LandingPageMobile();
+      },
     );
   }
 }

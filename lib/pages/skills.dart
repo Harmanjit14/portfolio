@@ -49,6 +49,10 @@ class _SkillPageState extends State<SkillPage> {
                     child: GridView.count(
                       crossAxisCount: 3,
                       crossAxisSpacing: 5,
+                      mainAxisSpacing: 5,
+                      padding: EdgeInsets.all(0),
+                      // scrollDirection: Axis.horizontal,
+                      shrinkWrap: true,
                       children: [
                         card(85, 1),
                         card(90, 0),

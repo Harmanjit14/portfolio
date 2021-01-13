@@ -11,8 +11,6 @@ import 'package:video_player/video_player.dart';
 import 'package:portfolio/constants/scroll.dart';
 
 // ignore: unused_element
-double scrollPosition = 0;
-ScrollController _scrollController;
 
 class LandingPage extends StatefulWidget {
   @override
@@ -24,6 +22,8 @@ class _LandingPageState extends State<LandingPage> {
   VideoPlayerController _controller2;
   VideoPlayerController _controller3;
   // ScrollController _scrollController;
+  double scrollPosition = 0;
+  ScrollController _scrollController;
 
   _scrollListener() {
     setState(() {
@@ -401,6 +401,61 @@ class _LandingPageState extends State<LandingPage> {
               )
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class LandingPageMobile extends StatefulWidget {
+  @override
+  _LandingPageMobileState createState() => _LandingPageMobileState();
+}
+
+class _LandingPageMobileState extends State<LandingPageMobile> {
+  ScrollController _scrollController;
+  final Color headColor = Color(0xffE8BD0D);
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    Size screensize = MediaQuery.of(context).size;
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+      ),
+      drawer: Drawer(
+        child: Column(
+          children: [
+            NavbarItem(0, "Projects", Icons.work, _scrollController,
+                screensize.height * 3, 1200),
+            NavbarItem(1, "Skills", Icons.emoji_objects, _scrollController,
+                screensize.height * 2, 750),
+            NavbarItem(2, "About Me!", Icons.emoji_emotions, _scrollController,
+                screensize.height, 500),
+          ],
+        ),
+      ),
+      body: SingleChildScrollView(
+        controller: _scrollController,
+        child: Column(
+          children: [
+            Container(
+              width: screensize.width,
+              height: screensize.height,
+              color: Colors.green,
+            ),
+            Container(
+              width: screensize.width,
+              height: screensize.height,
+              child: AboutSectionMobile(),
+            ),
+          ],
         ),
       ),
     );

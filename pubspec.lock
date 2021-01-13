@@ -227,13 +227,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.11.4"
-  lottie:
-    dependency: "direct main"
-    description:
-      name: lottie
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.7.0+1"
   matcher:
     dependency: transitive
     description:
@@ -512,6 +505,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.4+1"
+  video_player_web_hls:
+    dependency: "direct main"
+    description:
+      name: video_player_web_hls
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.8"
   vm_service:
     dependency: transitive
     description:
