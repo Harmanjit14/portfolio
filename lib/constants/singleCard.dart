@@ -40,3 +40,25 @@ Widget card(int percentage, int index) {
     ),
   );
 }
+
+Widget card2(int percentage, int index) {
+  return Container(
+    child: Column(
+      children: [
+        Container(
+          height: 90,
+          width: 90,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Image.asset(
+              images[index],
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        SizedBox(height: 5),
+        myText(places[index], Colors.white, 10),
+      ],
+    ),
+  );
+}

@@ -30,3 +30,33 @@ class Credits extends StatelessWidget {
     );
   }
 }
+
+class CreditsMobile extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      alignment: Alignment.center,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          myText("Made with Love", Colors.white, 16),
+          SizedBox(width: 5),
+          Icon(
+            Icons.favorite,
+            size: 20,
+            color: Colors.white,
+          ),
+          SizedBox(width: 5),
+          myText("and Coffee", Colors.white, 16),
+          SizedBox(width: 5),
+          Icon(
+            Icons.local_cafe,
+            size: 20,
+            color: Colors.white,
+          ),
+        ],
+      ),
+    );
+  }
+}

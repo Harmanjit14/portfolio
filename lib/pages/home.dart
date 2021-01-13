@@ -432,10 +432,17 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
       drawer: Drawer(
         child: Column(
           children: [
+            DrawerHeader(child: Container()),
             NavbarItem(0, "Projects", Icons.work, _scrollController,
                 screensize.height * 3, 1200),
+            Divider(
+              color: Colors.grey[350],
+            ),
             NavbarItem(1, "Skills", Icons.emoji_objects, _scrollController,
                 screensize.height * 2, 750),
+            Divider(
+              color: Colors.grey[350],
+            ),
             NavbarItem(2, "About Me!", Icons.emoji_emotions, _scrollController,
                 screensize.height, 500),
           ],
@@ -457,8 +464,19 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
             ),
             Container(
               width: screensize.width,
+              height: screensize.height + 100,
+              child: SkillsMobile5(),
+            ),
+            Container(
+              width: screensize.width,
               height: screensize.height,
-              child: SkillPage(),
+              child: Carosel(),
+            ),
+            Container(
+              color: headColor,
+              width: screensize.width,
+              height: 100,
+              child: CreditsMobile(),
             )
           ],
         ),
