@@ -482,12 +482,12 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
             NavbarItem(0, "Projects", Icons.work, _scrollController,
                 screensize.height * 3, 1200),
             Divider(
-              color: Colors.grey[350],
+              color: Colors.grey[600],
             ),
             NavbarItem(1, "Skills", Icons.emoji_objects, _scrollController,
                 screensize.height * 2, 750),
             Divider(
-              color: Colors.grey[350],
+              color: Colors.grey[600],
             ),
             NavbarItem(2, "About Me!", Icons.emoji_emotions, _scrollController,
                 screensize.height, 500),
@@ -511,32 +511,60 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                    InkWell(
-                        onTap: () {
-                          setState(() {
-                            _indexFinal = 1;
-                          });
-                        },
-                        child: headText("Application .", Colors.white, 30)),
-                    SizedBox(height: 10),
-                    InkWell(
-                        onTap: () {
-                          setState(() {
-                            _indexFinal = 2;
-                          });
-                        },
-                        child: headText("Backend .", Colors.white, 30)),
-                    SizedBox(height: 10),
-                    InkWell(
-                        onTap: () {
-                          setState(() {
-                            _indexFinal = 3;
-                          });
-                        },
-                        child: headText("Design .", Colors.white, 30)),
+                        InkWell(
+                            onTap: () {
+                              setState(() {
+                                _indexFinal = 1;
+                              });
+                            },
+                            child: headText("Application .", Colors.white, 30)),
+                        SizedBox(height: 10),
+                        InkWell(
+                            onTap: () {
+                              setState(() {
+                                _indexFinal = 2;
+                              });
+                            },
+                            child: headText("Backend .", Colors.white, 30)),
+                        SizedBox(height: 10),
+                        InkWell(
+                            onTap: () {
+                              setState(() {
+                                _indexFinal = 3;
+                              });
+                            },
+                            child: headText("Design .", Colors.white, 30)),
                       ],
                     ),
-                  )
+                  ),
+                  Positioned(
+                    left: 5,
+                    bottom: 80,
+                    child: Container(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SocialIcon(LineAwesomeIcons.github, 0),
+                          SizedBox(height: 10),
+                          SocialIcon(LineAwesomeIcons.instagram, 1),
+                          SizedBox(height: 10),
+                          SocialIcon(LineAwesomeIcons.at, 2),
+                          SizedBox(height: 10),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              SocialIcon(LineAwesomeIcons.linkedin, 3),
+                              SizedBox(width: 10),
+                              SocialIcon(LineAwesomeIcons.archive, 4),
+                              SizedBox(width: 10),
+                              SocialIcon(LineAwesomeIcons.code, 5),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
