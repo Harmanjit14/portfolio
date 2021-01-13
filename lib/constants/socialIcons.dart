@@ -22,17 +22,17 @@ class _SocialIconState extends State<SocialIcon> {
   void ontap(int index) async {
     switch (index) {
       case 0:
-        await launch("https://github.com/Harmanjit14");
+        await launch("https://github.com/gurleen-kaur1313");
         break;
       case 1:
-        await launch("https://www.instagram.com/harmanjit_14/");
+        await launch("https://www.instagram.com/gurleen_dhillon_001/");
         break;
       case 2:
         Alert(
           context: context,
           type: AlertType.info,
           title: "Mail me here",
-          desc: "harmanjit140500@gmail.com",
+          desc: "gurleendhillonm1114@gmail.com",
           buttons: [
             DialogButton(
               child: Text(
@@ -46,13 +46,13 @@ class _SocialIconState extends State<SocialIcon> {
         ).show();
         break;
       case 3:
-        await launch("https://www.linkedin.com/in/harmanjit-singh-1405/");
+        await launch("https://www.linkedin.com/in/gurleen-kaur-55884b1b4/");
         break;
       case 4:
-        await launch("https://devfolio.co/@harmanjit_14");
+        await launch("https://devfolio.co/@Gurleen2430");
         break;
       case 5:
-        await launch("https://leetcode.com/Harmanjit14/");
+        await launch("https://leetcode.com/gurleendhillonm1114/");
         break;
     }
   }

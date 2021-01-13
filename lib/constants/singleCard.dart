@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/constants/text_style.dart';
 
 final List<String> images = [
-  'assets/skills/firebase.jpg',
-  'assets/skills/flutter.jpg',
+  'assets/skills/html.png',
+  'assets/skills/css.png',
   'assets/skills/django.png',
-  'assets/skills/java.jpeg',
-  'assets/skills/photoshop.png',
-  'assets/skills/filmora.png',
+  'assets/skills/cpp.jpeg',
+  'assets/skills/python.png',
+  'assets/skills/flutter.jpg',
 ];
 
 final List<String> places = [
-  'FIREBASE',
-  'FLUTTER',
+  'HTML',
+  'CSS',
   'DJANGO',
-  'JAVA',
-  'PHOTOSHOP',
-  'FILMORA',
+  'CPP',
+  'PYTHON',
+  'FLUTTER',
 ];
 
 Widget card(int percentage, int index) {

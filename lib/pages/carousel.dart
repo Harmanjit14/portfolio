@@ -5,26 +5,20 @@ import 'package:portfolio/constants/text_style.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 final List<String> images = [
-  'https://ma-hub.imgix.net/wp-images/2019/05/04185051/royalty-free-music-Background.jpg',
-  'https://miro.medium.com/max/4430/1*A0xqqOV7LXlLEK1Acu8BFw.jpeg',
   'https://www.datocms-assets.com/17507/1606822997-empowerment.jpg',
   'https://st2.depositphotos.com/3971023/6400/v/950/depositphotos_64004381-stock-illustration-cheerful-people-holding-hands-seamless.jpg',
-  'https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg',
+  'https://images.pexels.com/photos/3109168/pexels-photo-3109168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
 ];
 final List<String> url = [
-  'https://github.com/Harmanjit14/melodies-frontend',
-  'https://github.com/Harmanjit14/ThaparConfessionsApp-Firebase',
-  'https://github.com/Harmanjit14/RAISE-Hack4She2020',
-  'https://github.com/Harmanjit14/OneNess',
-  'https://github.com/Harmanjit14/Food-Delivery-App-UI',
+  'https://github.com/gurleen-kaur1313/RAISE-BACKEND',
+  'https://github.com/gurleen-kaur1313/Oneness-Backend',
+  'https://github.com/gurleen-kaur1313/OldBooksell-purchase_website',
 ];
 
 final List<String> places = [
-  'MELODIES',
-  'THAPAR-CONFESSIONS',
   'RAISE',
   'ONENESS',
-  'FOOD APP UI',
+  'OLD BOOKS SELLING WEBSITE',
 ];
 
 class Carosel extends StatefulWidget {

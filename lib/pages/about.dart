@@ -44,12 +44,12 @@ class _AboutSectionState extends State<AboutSection> {
                     margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
                     child: headText("About Me", headColor, 50)),
                 myText(
-                    "Hi There! , My name is Harmanjit Singh. I am Full Stack-Developer and a UI/UX Designer. I am currently pursueing BTech in COE at Thapar Institute of Engineering and Technology, Patiala. I currently live in Punjab, India, happy to work from anywhere. My hobbies are swimming, gaming, traveling, badmintion, coding. I am always up to learn something new and create something better for the society",
+                    "Hi There! , My name is Gurleen Kaur. I am Full Stack-Developer. I am currently pursueing BTech in COE at Thapar Institute of Engineering and Technology, Patiala. I currently live in Uttar Pradesh, India, happy to work from anywhere. My hobbies are singing, traveling, playing badminton, and i love coding. I am always up to learn something new and create something better for the society",
                     Colors.white,
                     22,
                     weight: FontWeight.w400),
                 myText(
-                    "I am currently working and ready to collaborate on projects based on Flutter and Django. I usually design UI's on Figma and Adobe Photoshop CC19. I am currently learning AWS.",
+                    "I am currently working and ready to collaborate on projects Django. I am currently learning Flutter and AWS.",
                     Colors.white,
                     22,
                     weight: FontWeight.w600),
@@ -219,12 +219,12 @@ class _AboutSectionMobileState extends State<AboutSectionMobile> {
                       margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
                       child: headText("About Me", headColor, 30)),
                   myText(
-                      "Hi There! , My name is Harmanjit Singh. I am Full Stack-Developer and a UI/UX Designer. I am currently pursueing BTech in COE at Thapar Institute of Engineering and Technology, Patiala. I currently live in Punjab, India, happy to work from anywhere. My hobbies are swimming, gaming, traveling, badmintion, coding. I am always up to learn something new and create something better for the society",
+                      "Hi There! , My name is Gurleen Kaur. I am Full Stack-Developer. I am currently pursueing BTech in COE at Thapar Institute of Engineering and Technology, Patiala. I currently live in Uttar Pradesh, India, happy to work from anywhere. My hobbies are singing, traveling, playing badminton, and i love coding. I am always up to learn something new and create something better for the society",
                       Colors.white,
                       16,
                       weight: FontWeight.w400),
                   myText(
-                      "I am currently working and ready to collaborate on projects based on Flutter and Django. I usually design UI's on Figma and Adobe Photoshop CC19. I am currently learning AWS.",
+                      "I am currently working and ready to collaborate on projects Django. I am currently learning Flutter and AWS.",
                       Colors.white,
                       16,
                       weight: FontWeight.w600),

@@ -213,7 +213,7 @@ class _LandingPageState extends State<LandingPage> {
                             children: [
                               Container(
                                 child: myText(
-                                    "Harmanjit Singh", Colors.grey[200], 20),
+                                    "Gurleen Kaur", Colors.grey[200], 20),
                               ),
                               Container(
                                 child: Row(
