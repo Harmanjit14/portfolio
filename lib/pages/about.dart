@@ -339,7 +339,7 @@ class _AboutSectionMobileState extends State<AboutSectionMobile> {
                 ),
                 SizedBox(width: 20),
                 Expanded(
-                  child: (hoverabout) ? aboutMe() : EducationPage(),
+                  child: (hoverabout) ? aboutMe() : EducationMobile(),
                 ),
               ],
             ),

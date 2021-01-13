@@ -455,6 +455,11 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
               height: screensize.height,
               child: AboutSectionMobile(),
             ),
+            Container(
+              width: screensize.width,
+              height: screensize.height,
+              child: SkillPage(),
+            )
           ],
         ),
       ),

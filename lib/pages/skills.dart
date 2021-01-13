@@ -87,18 +87,13 @@ class _SkillPageState extends State<SkillPage> {
           ),
           SizedBox.expand(
             child: Container(
-              margin: EdgeInsets.fromLTRB(50, 50, 50, 50),
-              child: Row(
+              margin: EdgeInsets.fromLTRB(20, 20, 20, 20),
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  (hoverSkill)
-                      ? Expanded(child: skillsGrid())
-                      : Expanded(child: WorkPage()),
-                  SizedBox(width: 60),
                   Container(
-                    margin: EdgeInsets.fromLTRB(0, 150, 0, 0),
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
                     height: screenSize.height,
-                    width: 250,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.end,
@@ -174,6 +169,10 @@ class _SkillPageState extends State<SkillPage> {
                             ),
                           ),
                         ),
+                        SizedBox(height: 20),
+                        (hoverSkill)
+                            ? Expanded(child: skillsGrid())
+                            : Expanded(child: WorkPage()),
                       ],
                     ),
                   ),

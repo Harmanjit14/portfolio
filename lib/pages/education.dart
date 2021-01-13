@@ -238,7 +238,7 @@ class EducationMobile extends StatelessWidget {
                             ),
                             Container(
                               child: myText("M.G.N Public School UE-2,",
-                                  Colors.grey[350], 16),
+                                  Colors.grey[350], 12),
                             ),
                             Container(
                               child: myText(
@@ -279,7 +279,7 @@ class EducationMobile extends StatelessWidget {
                             ),
                             Container(
                               child: myText("M.G.N Public School UE-2,",
-                                  Colors.grey[350], 25),
+                                  Colors.grey[350], 12),
                             ),
                             Container(
                               child: myText(
@@ -315,14 +315,19 @@ class EducationMobile extends StatelessWidget {
                               child: myText("2019-2023", Colors.grey[350], 10),
                             ),
                             Container(
-                              child: myText("B.Tech in Computer Engineering",
-                                  Colors.white, 20),
+                              child: myText("B.Tech in", Colors.white, 20),
                             ),
                             Container(
                               child: myText(
-                                  "Thapar Institute of Engineering and Technology,",
-                                  Colors.grey[350],
-                                  16),
+                                  "Computer Engineering", Colors.white, 20),
+                            ),
+                            Container(
+                              child: myText("Thapar Institute of Engineering",
+                                  Colors.grey[350], 12),
+                            ),
+                            Container(
+                              child: myText(
+                                  "and Technology,", Colors.grey[350], 12),
                             ),
                             Container(
                               child: myText(
