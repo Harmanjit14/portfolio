@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'welcome back',
+      title: 'Hi There!',
       theme: ThemeData(
         primarySwatch: Colors.amber,
         visualDensity: VisualDensity.comfortable,
