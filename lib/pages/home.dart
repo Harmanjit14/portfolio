@@ -183,214 +183,199 @@ class _LandingPageState extends State<LandingPage> {
     Size screensize = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Color(0xff03030F), //Color(0xff242B2E),
-      body: WebScrollbar(
-        color: Colors.yellow,
-        backgroundColor: Colors.transparent,
-        width: 10,
-        heightFraction: 0.3,
+      body: ListView(
         controller: _scrollController,
-        child: SingleChildScrollView(
-          controller: _scrollController,
-          physics: ClampingScrollPhysics(),
-          child: Column(
-            children: [
-              Container(
-                height: screensize.height,
-                width: screensize.width,
-                child: Stack(
-                  alignment: Alignment.topCenter,
+        physics: BouncingScrollPhysics(),
+        children: [
+          Container(
+            height: screensize.height,
+            width: screensize.width,
+            child: Stack(
+              alignment: Alignment.topCenter,
+              children: [
+                showScreen(screensize),
+                Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    showScreen(screensize),
-                    Column(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Container(
-                          margin: EdgeInsets.fromLTRB(30, 10, 30, 0),
-                          // height: 100,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                child: myText(
-                                    "Harmanjit Singh", Colors.grey[200], 20),
-                              ),
-                              Container(
-                                child: Row(
-                                  children: [
-                                    NavbarItem(
-                                        0,
-                                        "Projects",
-                                        Icons.work,
-                                        _scrollController,
-                                        (screensize.height * 3) + 100,
-                                        1200),
-                                    NavbarItem(
-                                        1,
-                                        "Skills",
-                                        Icons.emoji_objects,
-                                        _scrollController,
-                                        screensize.height * 2,
-                                        750),
-                                    NavbarItem(
-                                        2,
-                                        "About Me!",
-                                        Icons.emoji_emotions,
-                                        _scrollController,
-                                        screensize.height,
-                                        500),
-                                  ],
-                                ),
-                              ),
-                            ],
+                    Container(
+                      margin: EdgeInsets.fromLTRB(30, 10, 30, 0),
+                      // height: 100,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            child:
+                                myText("Harmanjit Singh", Colors.grey[200], 20),
                           ),
-                        ),
-                        Expanded(
-                          child: Container(
-                            child: Stack(children: [
-                              Center(
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    InkWell(
-                                      onHover: (val) {
-                                        // _controller.play();
-                                        setState(() {
-                                          switch (val) {
-                                            case true:
-                                              setState(() {
-                                                _indexFinal = 3;
-                                              });
-
-                                              break;
-                                            case false:
-                                              {
-                                                setState(() {
-                                                  _indexFinal = 0;
-                                                });
-                                              }
-                                              break;
-                                            default:
-                                          }
-                                        });
-                                      },
-                                      onTap: () {},
-                                      child: headText(
-                                          "Applications.", Colors.white, 50),
-                                    ),
-                                    SizedBox(width: 15),
-                                    InkWell(
-                                      onHover: (val) {
-                                        // _controller.play();
-                                        setState(() {
-                                          switch (val) {
-                                            case true:
-                                              setState(() {
-                                                _indexFinal = 2;
-                                              });
-
-                                              break;
-                                            case false:
-                                              {
-                                                setState(() {
-                                                  _indexFinal = 0;
-                                                });
-                                              }
-                                              break;
-                                            default:
-                                          }
-                                        });
-                                      },
-                                      onTap: () {},
-                                      child: headText(
-                                          "Backend.", Colors.white, 50),
-                                    ),
-                                    SizedBox(width: 15),
-                                    InkWell(
-                                      onHover: (val) {
-                                        // _controller.play();
-                                        setState(() {
-                                          switch (val) {
-                                            case true:
-                                              setState(() {
-                                                _indexFinal = 1;
-                                              });
-
-                                              break;
-                                            case false:
-                                              {
-                                                setState(() {
-                                                  _indexFinal = 0;
-                                                });
-                                              }
-                                              break;
-                                            default:
-                                          }
-                                        });
-                                      },
-                                      onTap: () {},
-                                      child: headText(
-                                          "Designing.", Colors.white, 50),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.fromLTRB(30, 0, 0, 20),
-                                alignment: Alignment.bottomLeft,
-                                child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      SocialIcon(LineAwesomeIcons.github, 0),
-                                      SizedBox(height: 15),
-                                      SocialIcon(LineAwesomeIcons.instagram, 1),
-                                      SizedBox(height: 15),
-                                      SocialIcon(LineAwesomeIcons.at, 2),
-                                      SizedBox(height: 15),
-                                      SocialIcon(LineAwesomeIcons.linkedin, 3),
-                                      SizedBox(height: 15),
-                                      SocialIcon(LineAwesomeIcons.archive, 4),
-                                      SizedBox(height: 15),
-                                      SocialIcon(LineAwesomeIcons.code, 5),
-                                    ]),
-                              )
-                            ]),
+                          Container(
+                            child: Row(
+                              children: [
+                                NavbarItem(
+                                    0,
+                                    "Projects",
+                                    Icons.work,
+                                    _scrollController,
+                                    (screensize.height * 3) + 100,
+                                    1200),
+                                NavbarItem(
+                                    1,
+                                    "Skills",
+                                    Icons.emoji_objects,
+                                    _scrollController,
+                                    screensize.height * 2,
+                                    750),
+                                NavbarItem(2, "About Me!", Icons.emoji_emotions,
+                                    _scrollController, screensize.height, 500),
+                              ],
+                            ),
                           ),
-                        )
-                      ],
+                        ],
+                      ),
                     ),
-                    botText(),
+                    Expanded(
+                      child: Container(
+                        child: Stack(children: [
+                          Center(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                InkWell(
+                                  onHover: (val) {
+                                    // _controller.play();
+                                    setState(() {
+                                      switch (val) {
+                                        case true:
+                                          setState(() {
+                                            _indexFinal = 3;
+                                          });
+
+                                          break;
+                                        case false:
+                                          {
+                                            setState(() {
+                                              _indexFinal = 0;
+                                            });
+                                          }
+                                          break;
+                                        default:
+                                      }
+                                    });
+                                  },
+                                  onTap: () {},
+                                  child: headText(
+                                      "Applications.", Colors.white, 50),
+                                ),
+                                SizedBox(width: 15),
+                                InkWell(
+                                  onHover: (val) {
+                                    // _controller.play();
+                                    setState(() {
+                                      switch (val) {
+                                        case true:
+                                          setState(() {
+                                            _indexFinal = 2;
+                                          });
+
+                                          break;
+                                        case false:
+                                          {
+                                            setState(() {
+                                              _indexFinal = 0;
+                                            });
+                                          }
+                                          break;
+                                        default:
+                                      }
+                                    });
+                                  },
+                                  onTap: () {},
+                                  child: headText("Backend.", Colors.white, 50),
+                                ),
+                                SizedBox(width: 15),
+                                InkWell(
+                                  onHover: (val) {
+                                    // _controller.play();
+                                    setState(() {
+                                      switch (val) {
+                                        case true:
+                                          setState(() {
+                                            _indexFinal = 1;
+                                          });
+
+                                          break;
+                                        case false:
+                                          {
+                                            setState(() {
+                                              _indexFinal = 0;
+                                            });
+                                          }
+                                          break;
+                                        default:
+                                      }
+                                    });
+                                  },
+                                  onTap: () {},
+                                  child:
+                                      headText("Designing.", Colors.white, 50),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.fromLTRB(30, 0, 0, 20),
+                            alignment: Alignment.bottomLeft,
+                            child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  SocialIcon(LineAwesomeIcons.github, 0),
+                                  SizedBox(height: 15),
+                                  SocialIcon(LineAwesomeIcons.instagram, 1),
+                                  SizedBox(height: 15),
+                                  SocialIcon(LineAwesomeIcons.at, 2),
+                                  SizedBox(height: 15),
+                                  SocialIcon(LineAwesomeIcons.linkedin, 3),
+                                  SizedBox(height: 15),
+                                  SocialIcon(LineAwesomeIcons.archive, 4),
+                                  SizedBox(height: 15),
+                                  SocialIcon(LineAwesomeIcons.code, 5),
+                                ]),
+                          )
+                        ]),
+                      ),
+                    )
                   ],
                 ),
-              ),
-              Container(
-                height: screensize.height,
-                width: screensize.width,
-                child: AboutSection(),
-                color: Color(0xffCAD5E2),
-              ),
-              Container(
-                height: screensize.height,
-                width: screensize.width,
-                child: SkillPage(),
-              ),
-              Container(
-                height: screensize.height,
-                width: screensize.width,
-                child: Carosel(),
-                // color: Colors.yellow,
-              ),
-              Container(
-                height: 100,
-                width: screensize.width,
-                color: Color(0xffE8BD0D),
-                child: Credits(),
-              )
-            ],
+                botText(),
+              ],
+            ),
           ),
-        ),
+          Container(
+            height: screensize.height,
+            width: screensize.width,
+            child: AboutSection(),
+            color: Color(0xffCAD5E2),
+          ),
+          Container(
+            height: screensize.height,
+            width: screensize.width,
+            child: SkillPage(),
+          ),
+          Container(
+            height: screensize.height,
+            width: screensize.width,
+            child: Carosel(),
+            // color: Colors.yellow,
+          ),
+          Container(
+            height: 100,
+            width: screensize.width,
+            color: Color(0xffE8BD0D),
+            child: Credits(),
+          )
+        ],
       ),
     );
   }
